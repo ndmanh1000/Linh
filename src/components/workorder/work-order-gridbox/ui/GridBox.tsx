@@ -1,12 +1,20 @@
+import React from "react";
 import image60 from "../../../../../public/images/work-order-grid-box/image60.png";
 import { LocationIcon, Boc1Icon, UserocIcon } from "../../../../icons";
+
+interface GridBoxProps {
+  woNumber: string;
+  statusText: string;
+  statusColor: string;
+  statusBg: string;
+}
 
 export default function GridBox({
   woNumber,
   statusText,
   statusColor,
   statusBg,
-}) {
+}: GridBoxProps) {
   return (
     <div className="w-full bg-white px-3 py-4">
       <div className="w-full bg-white rounded-[4px] py-[16px] border-2 border-[#F3F3F3] relative">
@@ -18,7 +26,7 @@ export default function GridBox({
             <p>{woNumber}</p>
           </div>
           <div
-            className={`border rounded-[4px] w-32 text-[14px] text-center px-[2px] py-[8px]`}
+            className="border rounded-[4px] w-32 text-[14px] text-center px-[2px] py-[8px]"
             style={{ borderColor: statusColor, backgroundColor: statusBg }}
           >
             <p style={{ color: statusColor }}>{statusText}</p>

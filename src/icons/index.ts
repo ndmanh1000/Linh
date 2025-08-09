@@ -64,9 +64,38 @@ import {ReactComponent as DiagramIcon} from "./diagram.svg?react";
 import {ReactComponent as LocationIcon} from "./location.svg?react";
 import {ReactComponent as Boc1Icon} from "./boc1.svg?react";
 import {ReactComponent as UserocIcon} from "./user-octagon.svg?react";
+import {ReactComponent as RecorIcon} from "./record-circle.svg?react";
+import {ReactComponent as ClockIcon} from "./clock.svg?react";
+import {ReactComponent as DolarIcon} from "./dollar-circle.svg?react";
+import {ReactComponent as BackwardIcon} from "./backward-item.svg?react";
+import {ReactComponent as EditIcon1} from "./edit-2.svg?react";
+import {ReactComponent as LinkIcon} from "./link.svg?react";
+import {ReactComponent as Time2Icon} from "./time2.svg?react";
+import {ReactComponent as DocumentIcon} from "./document-download.svg?react";
+import {ReactComponent as Note2Icon} from "./note-2.svg?react";
+import {ReactComponent as Copy1} from "./copy1.svg?react";
+import {ReactComponent as Track1Icon} from "./trash1.svg?react";
+import {ReactComponent as DolaIcon} from "./dola.svg?react";
+
+
+
+
+
 
 
 export {
+  DolaIcon,
+  Track1Icon,
+  Copy1,
+  Note2Icon,
+  DocumentIcon,
+  Time2Icon,
+  LinkIcon,
+  EditIcon1,
+  BackwardIcon,
+  DolarIcon,
+  ClockIcon,
+  RecorIcon,
   UserocIcon,
   Boc1Icon,
   LocationIcon,

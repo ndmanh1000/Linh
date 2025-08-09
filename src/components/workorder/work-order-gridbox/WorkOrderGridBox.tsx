@@ -1,6 +1,10 @@
 import GridBox from "./ui/GridBox";
+import { useModal } from "../../../hooks/useModal";
+import ModalGridBox from "../../modal/ModalGridBox";
 
 export default function WorkOrderGridBox() {
+  const { isOpen, openModal, closeModal } = useModal();
+
   const workOrders = [
     {
       woNumber: "WO #001",
@@ -26,23 +30,25 @@ export default function WorkOrderGridBox() {
       statusColor: "#FF4D4F",
       statusBg: "#FFF1F0",
     },
-    // ... thêm các trạng thái khác
   ];
 
   return (
     <div className="w-full bg-white px-3 py-4 grid grid-cols-1 md:grid-cols-5 gap-4">
       {Array.from({ length: 10 }).map((_, index) => {
-        const wo = workOrders[index % workOrders.length]; // lặp lại trạng thái nếu hết
+        const wo = workOrders[index % workOrders.length];
         return (
-          <GridBox
-            key={index}
-            woNumber={wo.woNumber}
-            statusText={wo.statusText}
-            statusColor={wo.statusColor}
-            statusBg={wo.statusBg}
-          />
+          <div key={index} onClick={openModal} className="cursor-pointer">
+            <GridBox
+              woNumber={wo.woNumber}
+              statusText={wo.statusText}
+              statusColor={wo.statusColor}
+              statusBg={wo.statusBg}
+            />
+          </div>
         );
       })}
+
+      <ModalGridBox isOpen={isOpen} onClose={closeModal} />
     </div>
   );
 }
