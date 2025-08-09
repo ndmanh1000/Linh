@@ -15,6 +15,7 @@ import { useModal } from "../../hooks/useModal";
 import ModalAddTime from "../modal/ModalAddTime";
 import ModalAddCost from "../modal/ModalAddCost";
 import ModalAddPart from "../modal/ModalAddPart";
+import ModalEditWorkOrder from "../modal/ui-edit-work-order/ModalEditWorkOrder";
 
 export default function GroupButton() {
   // Modal cho AddTime
@@ -35,6 +36,11 @@ export default function GroupButton() {
     openModal: openPartModal,
     closeModal: closePartModal,
   } = useModal();
+  const {
+    isOpen: isModalEditWorkOrderOpen,
+    openModal: openModalEditWorkOrder,
+    closeModal: closeModalEditWorkOrder,
+  } = useModal();
 
   const [isPlay, setIsPlay] = useState(false);
 
@@ -51,7 +57,7 @@ export default function GroupButton() {
       <DolarIcon className="cursor-pointer" onClick={openCostModal} />
 
       <BackwardIcon className="cursor-pointer" onClick={openPartModal} />
-      <EditIcon1 className="cursor-pointer" />
+      <EditIcon1 className="cursor-pointer" onClick={openModalEditWorkOrder} />
       <LinkIcon className="cursor-pointer" />
 
       {/* Dropdown */}
@@ -123,6 +129,10 @@ export default function GroupButton() {
       <ModalAddTime isOpen={isTimeOpen} onClose={closeTimeModal} />
       <ModalAddCost isOpen={isCostOpen} onClose={closeCostModal} />
       <ModalAddPart isOpen={isPartOpen} onClose={closePartModal} />
+      <ModalEditWorkOrder
+        isOpen={isModalEditWorkOrderOpen}
+        onClose={closeModalEditWorkOrder}
+      />
     </div>
   );
 }
