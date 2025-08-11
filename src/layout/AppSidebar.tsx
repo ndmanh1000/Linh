@@ -35,8 +35,8 @@ const navItems: NavItem[] = [
   },
   {
     icon: <MachinehealthIcon />,
-    name: "Machine Health",
-    path: "/fwefe",
+    name: "Preventive Maintenance",
+    path: "/preventivemaint",
   },
 
   {

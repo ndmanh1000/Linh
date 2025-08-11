@@ -76,6 +76,8 @@ import {ReactComponent as Note2Icon} from "./note-2.svg?react";
 import {ReactComponent as Copy1} from "./copy1.svg?react";
 import {ReactComponent as Track1Icon} from "./trash1.svg?react";
 import {ReactComponent as DolaIcon} from "./dola.svg?react";
+import {ReactComponent as BroomIcon} from "./broom.svg?react";
+
 
 
 
@@ -84,6 +86,7 @@ import {ReactComponent as DolaIcon} from "./dola.svg?react";
 
 
 export {
+  BroomIcon,
   DolaIcon,
   Track1Icon,
   Copy1,

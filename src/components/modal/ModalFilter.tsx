@@ -49,6 +49,7 @@ export default function ModalFilter({ isOpen, onClose }: ModalFilterProps) {
                     Remove
                   </div>
                 </div>
+
                 <MultiSelect
                   label=""
                   options={multiOptions}
@@ -79,7 +80,7 @@ export default function ModalFilter({ isOpen, onClose }: ModalFilterProps) {
               </div>
             </div>
             <div className="w-full flex items-center justify-between gap-2 md:gap-4 md:mt-3 mt-3">
-              <div className="flex items-center gap-2 text-[#1677FF]">
+              <div className="flex items-center gap-2 text-[#1677FF] cursor-pointer">
                 <FiPlus />
                 Add Filter
               </div>
