@@ -41,7 +41,6 @@ export default function FlTable() {
   const [selected, setSelected] = useState<number[]>([]);
   const isAllSelected = selected.length === data.length;
 
-  // Chọn / bỏ chọn tất cả
   const toggleSelectAll = () => {
     if (isAllSelected) {
       setSelected([]);
@@ -50,7 +49,6 @@ export default function FlTable() {
     }
   };
 
-  // Chọn từng dòng
   const toggleSelect = (index: number) => {
     if (selected.includes(index)) {
       setSelected(selected.filter((i) => i !== index));
@@ -78,38 +76,43 @@ export default function FlTable() {
             <th className="p-3 text-left">Allocated</th>
           </tr>
         </thead>
-        <tbody className="bg-white">
-          {data.map((item, index) => (
-            <tr
-              key={index}
-              className="rounded-lg shadow-sm bg-white hover:bg-gray-50"
-            >
-              <td className="p-3">
-                <input
-                  type="checkbox"
-                  checked={selected.includes(index)}
-                  onChange={() => toggleSelect(index)}
-                />
-              </td>
-              <td className="p-3">{item.name}</td>
-              <td className="p-3">
-                <div className="w-10 h-10 bg-gray-200 flex items-center justify-center rounded-md">
-                  <FaImage className="text-gray-500" />
-                </div>
-              </td>
-              <td className="p-3">
-                <span
-                  className={`px-2 py-1 rounded-md text-xs font-medium ${item.statusColor}`}
-                >
-                  {item.status}
-                </span>
-              </td>
-              <td className={`p-3 font-medium ${item.qtyColor}`}>
-                {item.qty.toFixed(2)}
-              </td>
-              <td className="p-3">{item.allocated.toFixed(2)}</td>
-            </tr>
-          ))}
+        <tbody>
+          {data.map((item, index) => {
+            const isSelected = selected.includes(index);
+            return (
+              <tr
+                key={index}
+                className={`rounded-lg shadow-sm transition-colors ${
+                  isSelected ? "bg-blue-100" : "bg-white hover:bg-gray-50"
+                }`}
+              >
+                <td className="p-3">
+                  <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => toggleSelect(index)}
+                  />
+                </td>
+                <td className="p-3">{item.name}</td>
+                <td className="p-3">
+                  <div className="w-10 h-10 bg-gray-200 flex items-center justify-center rounded-md">
+                    <FaImage className="text-gray-500" />
+                  </div>
+                </td>
+                <td className="p-3">
+                  <span
+                    className={`px-2 py-1 rounded-md text-xs font-medium ${item.statusColor}`}
+                  >
+                    {item.status}
+                  </span>
+                </td>
+                <td className={`p-3 font-medium ${item.qtyColor}`}>
+                  {item.qty.toFixed(2)}
+                </td>
+                <td className="p-3">{item.allocated.toFixed(2)}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

@@ -19,6 +19,7 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import PreventiveMaint from "./pages/PreventiveMaint";
+import PreventiveDetails from "./components/preventive-maint/preventive-maint-table-details/PreventiveDetails";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
             <Route path="/preventivemaint" element={<PreventiveMaint />} />
+            <Route path="/preventive-details" element={<PreventiveDetails />} />
 
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />

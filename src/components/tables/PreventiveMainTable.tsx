@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaImage } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 interface RowData {
   name: string;
@@ -15,7 +16,9 @@ interface RowData {
 }
 
 export default function PreventiveMainTable() {
-  const data: RowData[] = [
+  const navigate = useNavigate();
+
+  const [tableData, setTableData] = useState<RowData[]>([
     {
       name: "kiểm tra máy điều hòa",
       id: "6863fb69392...",
@@ -52,16 +55,16 @@ export default function PreventiveMainTable() {
       checklist: "Test 1",
       priorityColor: "bg-yellow-100 text-yellow-600",
     },
-  ];
+  ]);
 
   const [selected, setSelected] = useState<number[]>([]);
-  const isAllSelected = selected.length === data.length;
+  const isAllSelected = selected.length === tableData.length;
 
   const toggleSelectAll = () => {
     if (isAllSelected) {
       setSelected([]);
     } else {
-      setSelected(data.map((_, idx) => idx));
+      setSelected(tableData.map((_, idx) => idx));
     }
   };
 
@@ -71,6 +74,12 @@ export default function PreventiveMainTable() {
     } else {
       setSelected([...selected, index]);
     }
+  };
+
+  const handleAssetChange = (index: number, value: number) => {
+    const updatedData = [...tableData];
+    updatedData[index].assets = value;
+    setTableData(updatedData);
   };
 
   return (
@@ -98,39 +107,65 @@ export default function PreventiveMainTable() {
           </tr>
         </thead>
         <tbody className="text-sm">
-          {data.map((row, idx) => (
-            <tr key={idx} className="border-t hover:bg-gray-50">
-              <td className="p-3">
-                <input
-                  type="checkbox"
-                  checked={selected.includes(idx)}
-                  onChange={() => toggleSelect(idx)}
-                />
-              </td>
-              <td className="p-3">{row.name}</td>
-              <td className="p-3">{row.id}</td>
-              <td className="p-3">{row.title}</td>
-              <td className="p-3">{row.description}</td>
-              <td className="p-3">
-                <div className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center">
-                  <FaImage className="text-gray-500" />
-                </div>
-              </td>
-              <td className="p-3">{row.assets}</td>
-              <td className="p-3">{row.category}</td>
-              <td className="p-3">
-                <span
-                  className={`px-2 py-1 text-xs rounded ${row.priorityColor}`}
+          {tableData.map((row, idx) => {
+            const isSelected = selected.includes(idx);
+            return (
+              <tr
+                key={idx}
+                className={`border-t hover:bg-gray-50 ${
+                  isSelected ? "bg-blue-50" : ""
+                }`}
+              >
+                <td className="p-3">
+                  <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => toggleSelect(idx)}
+                  />
+                </td>
+                <td
+                  className="p-3 cursor-pointer"
+                  onClick={() => navigate("/preventive-details")}
                 >
-                  {row.priority}
-                </span>
-              </td>
-              <td className="p-3">{row.paused}</td>
-              <td className="p-3 text-blue-500 cursor-pointer">
-                {row.checklist}
-              </td>
-            </tr>
-          ))}
+                  {row.name}
+                </td>
+                <td className="p-3">{row.id}</td>
+                <td className="p-3">{row.title}</td>
+                <td className="p-3">{row.description}</td>
+                <td className="p-3">
+                  <div className="w-8 h-8 bg-gray-200 rounded flex items-center justify-center">
+                    <FaImage className="text-gray-500" />
+                  </div>
+                </td>
+                <td className="p-3">
+                  <select
+                    value={row.assets}
+                    onChange={(e) =>
+                      handleAssetChange(idx, Number(e.target.value))
+                    }
+                    className="border rounded px-2 py-1 text-sm"
+                  >
+                    <option value={1}>1</option>
+                    <option value={2}>2</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                  </select>
+                </td>
+                <td className="p-3">{row.category}</td>
+                <td className="p-3">
+                  <span
+                    className={`px-2 py-1 text-xs rounded ${row.priorityColor}`}
+                  >
+                    {row.priority}
+                  </span>
+                </td>
+                <td className="p-3">{row.paused}</td>
+                <td className="p-3 text-blue-500 cursor-pointer">
+                  {row.checklist}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
