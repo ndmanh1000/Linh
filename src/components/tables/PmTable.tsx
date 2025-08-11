@@ -127,13 +127,16 @@ const PmTable: React.FC = () => {
               </td>
               <td className="p-2 block md:table-cell ">
                 <div className="md:hidden font-semibold mb-1">Start Date</div>
-                <DatePicker
-                  id="date-picker"
-                  placeholder="Select start date"
-                  onChange={(dates, currentDateString) => {
-                    console.log({ dates, currentDateString });
-                  }}
-                />
+                <div className="w-full">
+                  <DatePicker
+                    id="date-picker"
+                    placeholder="Select a date"
+                    onChange={(dates, currentDateString) => {
+                      // Handle your logic
+                      console.log({ dates, currentDateString });
+                    }}
+                  />
+                </div>
               </td>
               <td className="p-2 block md:table-cell ">
                 <div className="md:hidden font-semibold mb-1">End Date</div>

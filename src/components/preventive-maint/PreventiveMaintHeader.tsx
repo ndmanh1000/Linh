@@ -1,6 +1,6 @@
 import { PlusOutlinedIcon, MoreIcon, ScanIcon } from "../../icons";
 import { Modal } from "../ui/modal";
-
+import { useState } from "react";
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import Select from "../form/Select";
@@ -11,6 +11,8 @@ import { useModal } from "../../hooks/useModal";
 import ModalQr from "../modal/ModalQr";
 import { GoPlus } from "react-icons/go";
 import PmTable from "../tables/PmTable";
+import ModalAddWorkOrderDetails from "../modal/ModalAddWorkOrderDetails";
+import ScheduleBox from "./ScheduleBox";
 
 const options = [
   { value: "marketing", label: "Marketing" },
@@ -25,6 +27,12 @@ export default function PreventiveMaintHeader() {
     openModal: openModalQr,
     closeModal: closeModalQr,
   } = useModal();
+  const {
+    isOpen: isModalAddWorkOrderDetailsOpen,
+    openModal: openModalAddWorkOrderDetails,
+    closeModal: closeModalAddWorkOrderDetails,
+  } = useModal();
+  const [showScheduleBox, setShowScheduleBox] = useState(false);
 
   return (
     <div>
@@ -78,6 +86,7 @@ export default function PreventiveMaintHeader() {
                         <button
                           className="w-full rounded-[8px] border border-[#D9D9D9] bg-white"
                           type="button"
+                          onClick={openModalAddWorkOrderDetails}
                         >
                           Add Word Order Details
                         </button>
@@ -93,11 +102,14 @@ export default function PreventiveMaintHeader() {
                       </div>
                       <div className="w-full rounded-[8px] border border-[#D9D9D9] bg-white px-[8px] py-[24px] md:mt-2 mt-3">
                         <button
-                          className="w-full rounded-[8px] border border-[#D9D9D9] bg-white"
+                          className="w-full rounded-[8px] border border-[#D9D9D9] bg-white relative z-20"
                           type="button"
+                          onClick={() => setShowScheduleBox(!showScheduleBox)}
                         >
                           Add Schedule
                         </button>
+
+                        {showScheduleBox && <ScheduleBox />}
                       </div>
                     </div>
                   </div>
@@ -147,6 +159,10 @@ export default function PreventiveMaintHeader() {
         </Modal>
       </div>
       <ModalQr isOpen={isModalQrOpen} onClose={closeModalQr} />
+      <ModalAddWorkOrderDetails
+        isOpen={isModalAddWorkOrderDetailsOpen}
+        onClose={closeModalAddWorkOrderDetails}
+      />
     </div>
   );
 }

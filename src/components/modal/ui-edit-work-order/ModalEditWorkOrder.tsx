@@ -6,6 +6,8 @@ import TextArea from "../../form/input/TextArea";
 import Select from "../../form/Select";
 import DatePicker from "../../form/date-picker";
 import { CiSearch } from "react-icons/ci";
+import Toggle from "../../toggle-switch/Toggle";
+import ToggleSwitch from "../../form/form-elements/ToggleSwitch";
 
 interface OptionType {
   value: string;
@@ -306,17 +308,10 @@ export default function ModalEditWorkOrder({
                     <p>Signature Required</p>
                     <p>
                       Require technicians to upload a signature image in order
-                      to complete this work order.
+                      to complete this work order
                     </p>
                   </div>
-                  <div>
-                    <div className="flex items-center space-x-2">
-                      <label className="relative inline-flex items-center cursor-pointer">
-                        <input type="checkbox" className="sr-only peer" />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-                      </label>
-                    </div>
-                  </div>
+                  <div></div>
                 </div>
               </div>
               <div className="w-full border-b border-[#F3F3F3] mt-4"></div>
