@@ -16,9 +16,12 @@ import {
   UserCircleIcon,
   MachinehealthIcon,
   DocumentnormalIcon,
+  BackwardIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
+import { FiBox, FiUsers } from "react-icons/fi";
+import { FaTasks, FaRegCopy } from "react-icons/fa";
 
 type NavItem = {
   name: string;
@@ -38,27 +41,57 @@ const navItems: NavItem[] = [
     name: "Preventive Maintenance",
     path: "/preventivemaint",
   },
+  {
+    icon: <FiBox />,
+    name: "Assets",
+    path: "#",
+  },
+  {
+    icon: <BackwardIcon />,
+    name: "Warehouse",
+    path: "#",
+  },
+  {
+    icon: <FiUsers />,
+    name: "People & Teams",
+    path: "#",
+  },
+  {
+    icon: <MachinehealthIcon />,
+    name: "Verdors & Customers",
+    path: "#",
+  },
+  {
+    icon: <FaTasks />,
+    name: "Checklists",
+    path: "#",
+  },
+  {
+    icon: <FaRegCopy />,
+    name: "Files",
+    path: "#",
+  },
 
-  {
-    icon: <CalenderIcon />,
-    name: "Calendar",
-    path: "/calendar",
-  },
-  {
-    icon: <UserCircleIcon />,
-    name: "User Profile",
-    path: "/profile",
-  },
-  {
-    name: "Forms",
-    icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
-  },
-  {
-    name: "Tables",
-    icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
+  // {
+  //   icon: <CalenderIcon />,
+  //   name: "Calendar",
+  //   path: "/calendar",
+  // },
+  // {
+  //   icon: <UserCircleIcon />,
+  //   name: "User Profile",
+  //   path: "/profile",
+  // },
+  // {
+  //   name: "Forms",
+  //   icon: <ListIcon />,
+  //   subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
+  // },
+  // {
+  //   name: "Tables",
+  //   icon: <TableIcon />,
+  //   subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
+  // },
   // {
   //   name: "Pages",
   //   icon: <PageIcon />,
