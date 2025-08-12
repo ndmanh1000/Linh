@@ -4,18 +4,25 @@ import ModalCalendar from "../modal/ModalCalendar";
 import { CalenderIcon1, TimerIcon2, SettingIcon2 } from "../../icons";
 import ModalMeterSchedule from "../modal/ModalMeterSchedule";
 import ModalCalendarQr from "../modal/ModalCalendarQr";
+import React from "react";
 
-export default function ScheduleBox({ closeBox }) {
+interface ScheduleBoxProps {
+  closeBox?: () => void;
+}
+
+export default function ScheduleBox({ closeBox }: ScheduleBoxProps) {
   const {
     isOpen: isModalCalendarOpen,
     openModal: openModalCalendar,
     closeModal: closeModalCalendar,
   } = useModal();
+
   const {
     isOpen: isModalMeterScheduleOpen,
     openModal: openModalMeterSchedule,
     closeModal: closeModalMeterSchedule,
   } = useModal();
+
   const {
     isOpen: isModalCalendarQrOpen,
     openModal: openModalCalendarQr,

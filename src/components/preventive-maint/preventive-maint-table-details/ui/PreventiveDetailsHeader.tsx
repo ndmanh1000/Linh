@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 export default function PreventiveDetailsHeader() {
   const navigate = useNavigate();
   return (
-    <div className="w-full flex items-center">
+    <div className="w-full md:flex items-center grid grid-cols-1 md:gap-2 gap-3">
       <div className="text-[20px] font-medium flex items-center md:gap-2 gap-2 w-full">
         <IoIosArrowRoundBack
           size={25}
@@ -15,11 +15,11 @@ export default function PreventiveDetailsHeader() {
         Kiểm tra máy điều hòa
       </div>
       <div className="w-full flex items-center md:gap-4 gap-2 justify-end">
-        <button className="border border-[#D9D9D9] bg-white p-2 h-10 rounded-[4px]">
+        <button className="border border-[#D9D9D9] bg-white p-2 h-10 rounded-[4px] w-full md:w-32">
           Edit Details
         </button>
         <button
-          className="border border-[#0C6FF9] bg-[#0C6FF9] text-white flex items-center h-10 justify-center px-2 py-2 rounded-[4px]"
+          className="border border-[#0C6FF9] bg-[#0C6FF9] text-white flex items-center h-10 justify-center px-2 py-2 rounded-[4px] w-full md:w-32"
           type="button"
         >
           Add Assets

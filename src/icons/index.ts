@@ -80,6 +80,7 @@ import {ReactComponent as BroomIcon} from "./broom.svg?react";
 import {ReactComponent as CalenderIcon1} from "./calendar1.svg?react";
 import {ReactComponent as TimerIcon2} from "./time2.svg?react";
 import {ReactComponent as SettingIcon2} from "./setting2.svg?react";
+import {ReactComponent as Edit3Icon} from "./edit-3.svg?react";
 
 
 
@@ -88,6 +89,7 @@ import {ReactComponent as SettingIcon2} from "./setting2.svg?react";
 
 
 export {
+  Edit3Icon,
   SettingIcon2,
   TimerIcon2,
   CalenderIcon1,
