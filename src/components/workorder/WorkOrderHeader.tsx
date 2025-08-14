@@ -10,6 +10,7 @@ import DatePicker from "../form/date-picker";
 import { useModal } from "../../hooks/useModal";
 import ModalQr from "../modal/ModalQr";
 import Toggle from "../toggle-switch/Toggle";
+// import UploadFiles from "../upload/UploadFiles";
 
 const options = [
   { value: "marketing", label: "Marketing" },

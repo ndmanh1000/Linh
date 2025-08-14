@@ -20,6 +20,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import PreventiveMaint from "./pages/PreventiveMaint";
 import PreventiveDetails from "./components/preventive-maint/preventive-maint-table-details/PreventiveDetails";
+import VerdorsCustomers from "./pages/VerdorsCustomers";
 
 export default function App() {
   return (
@@ -37,7 +38,7 @@ export default function App() {
             <Route path="/blank" element={<Blank />} />
             <Route path="/preventivemaint" element={<PreventiveMaint />} />
             <Route path="/preventive-details" element={<PreventiveDetails />} />
-
+            <Route path="/verdors-customer" element={<VerdorsCustomers />} />
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />
 
