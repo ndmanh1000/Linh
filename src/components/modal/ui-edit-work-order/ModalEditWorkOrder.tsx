@@ -8,7 +8,6 @@ import DatePicker from "../../form/date-picker";
 import { CiSearch } from "react-icons/ci";
 import Toggle from "../../toggle-switch/Toggle";
 import ToggleSwitch from "../../form/form-elements/ToggleSwitch";
-import UploadFiles from "../../upload/UploadFiles";
 
 interface OptionType {
   value: string;
@@ -136,7 +135,19 @@ export default function ModalEditWorkOrder({
                 </div>
                 <div className="flex flex-col space-y-2">
                   <label className="text-sm text-gray-700">Photos</label>
-                  <UploadFiles />
+                  <div className="flex items-center justify-center w-full">
+                    <label className="flex flex-col w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                      <div className="flex flex-col items-center justify-center pt-2 pb-2">
+                        <span className="text-sm text-gray-500 flex items-center justify-center gap-2">
+                          <button className="border border-[#333333] bg-white h-10 w-30 rounded-[5px]">
+                            Upload
+                          </button>{" "}
+                          or Drop Images
+                        </span>
+                      </div>
+                      <input type="file" className="hidden" multiple />
+                    </label>
+                  </div>
                 </div>
                 <div className="w-full border-b border-[#F3F3F3]"></div>
                 <div>Job Specifications</div>
@@ -265,7 +276,19 @@ export default function ModalEditWorkOrder({
                 <div className="w-full border-b border-[#F3F3F3]"></div>
                 <div className="mt-4">Documents & Reference</div>
                 <div className="mt-4">File</div>
-                <UploadFiles />
+                <div className="flex items-center justify-center w-full">
+                  <label className="flex flex-col w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                    <div className="flex flex-col items-center justify-center pt-2 pb-2">
+                      <span className="text-sm text-gray-500 flex items-center justify-center gap-2">
+                        <button className="border border-[#333333] bg-white h-10 w-30 rounded-[5px]">
+                          Upload
+                        </button>{" "}
+                        or Drop Images
+                      </span>
+                    </div>
+                    <input type="file" className="hidden" multiple />
+                  </label>
+                </div>
                 <div className="text-[16px] font-medium text-[#0071FF] cursor-pointer mt-4">
                   Add from Saved Files
                 </div>

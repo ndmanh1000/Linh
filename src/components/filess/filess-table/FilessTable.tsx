@@ -9,7 +9,7 @@ interface RowData {
   uploadedOn: string;
 }
 
-const VerdorsCustomersTable: React.FC = () => {
+const FilessTable: React.FC = () => {
   const [rows, setRows] = useState<RowData[]>([
     {
       id: 1,
@@ -107,7 +107,10 @@ const VerdorsCustomersTable: React.FC = () => {
                   </button>
                   {menuOpenId === row.id && (
                     <div className="absolute right-0 mt-2 w-28 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
-                      <button className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100">
+                      <button
+                        onClick={() => handleEdit(row.id)}
+                        className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                      >
                         ✏️ Edit
                       </button>
                       <button className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50">
@@ -125,4 +128,4 @@ const VerdorsCustomersTable: React.FC = () => {
   );
 };
 
-export default VerdorsCustomersTable;
+export default FilessTable;

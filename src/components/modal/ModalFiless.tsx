@@ -20,19 +20,16 @@ const handleSelectChange10 = (value: string) => {
   console.log("Selected value:", value);
 };
 
-interface ModalVerdorCustomerAddFiles {
+interface ModalFiless {
   isOpen: boolean;
   onClose: () => void;
 }
-interface ModalVerdorCustomerAddFileProps {
+interface ModalFilessProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function ModalVerdorCustomerAddFile({
-  isOpen,
-  onClose,
-}: ModalVerdorCustomerAddFileProps) {
+export default function ModalFiless({ isOpen, onClose }: ModalFilessProps) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="max-w-[700px] m-4">
       <div className="no-scrollbar relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">

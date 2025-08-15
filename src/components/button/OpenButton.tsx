@@ -1,15 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function OpenButton() {
   const [open, setOpen] = useState(false);
-  // State lưu mục đang chọn, mặc định Open
   const [selected, setSelected] = useState({
     label: "Open",
     color: "text-gray-600",
     icon: "◯",
   });
 
-  // Các option để chọn
   const options = [
     { label: "Open", color: "text-gray-600", icon: "◯" },
     { label: "In Progress", color: "text-green-700", icon: "◐" },
@@ -17,17 +15,23 @@ export default function OpenButton() {
     { label: "Complete", color: "text-blue-600", icon: "✓" },
   ];
 
-  // Bật tắt dropdown
+  // Load trạng thái từ localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem("selectedStatus");
+    if (saved) {
+      setSelected(JSON.parse(saved));
+    }
+  }, []);
+
   const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    setOpen(!open);
+    setOpen((prev) => !prev);
   };
 
-  // Khi chọn 1 mục, cập nhật selected và đóng dropdown
   const handleSelect = (option: typeof selected) => {
-    console.log("Chọn:", option);
     setSelected(option);
+    localStorage.setItem("selectedStatus", JSON.stringify(option));
     setOpen(false);
   };
 
@@ -35,11 +39,12 @@ export default function OpenButton() {
     <div
       className="relative inline-block text-left w-full"
       onBlur={() => setOpen(false)}
-      tabIndex={0} // cần để nhận onBlur
+      tabIndex={0}
     >
+      {/* Nút chính hiển thị trạng thái đã chọn */}
       <button
         onClick={handleToggle}
-        className={` flex items-center w-full gap-2 border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 focus:outline-none ${selected.color}`}
+        className={`flex items-center w-full gap-2 border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 focus:outline-none ${selected.color}`}
       >
         <span className="text-lg">{selected.icon}</span>
         <span>{selected.label}</span>
@@ -61,21 +66,21 @@ export default function OpenButton() {
         </svg>
       </button>
 
+      {/* Dropdown chọn trạng thái */}
       {open && (
-        <div
-          className="absolute mt-1 md:w-48 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10"
-          onMouseLeave={() => setOpen(false)}
-        >
-          {options.map((option) => (
-            <button
-              key={option.label}
-              className={`flex items-center gap-3 px-4 py-2 w-full text-left hover:bg-gray-100 ${option.color} text-sm`}
-              onClick={() => handleSelect(option)}
-            >
-              <span className="text-lg">{option.icon}</span>
-              {option.label}
-            </button>
-          ))}
+        <div className="absolute mt-1 md:w-48 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10">
+          {options
+            .filter((option) => option.label !== selected.label) // ẩn option đang chọn
+            .map((option) => (
+              <button
+                key={option.label}
+                className={`flex items-center gap-3 px-4 py-2 w-full text-left hover:bg-gray-100 ${option.color} text-sm`}
+                onClick={() => handleSelect(option)}
+              >
+                <span className="text-lg">{option.icon}</span>
+                {option.label}
+              </button>
+            ))}
         </div>
       )}
     </div>

@@ -59,17 +59,17 @@ const navItems: NavItem[] = [
   {
     icon: <MachinehealthIcon />,
     name: "Verdors & Customers",
-    path: "/verdors-customer",
+    path: "/verdors-customers",
   },
   {
     icon: <FaTasks />,
     name: "Checklists",
-    path: "#",
+    path: "/checklist",
   },
   {
     icon: <FaRegCopy />,
     name: "Files",
-    path: "#",
+    path: "/filess",
   },
 
   // {

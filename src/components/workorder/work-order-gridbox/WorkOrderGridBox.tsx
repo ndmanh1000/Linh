@@ -3,7 +3,11 @@ import { useModal } from "../../../hooks/useModal";
 import ModalGridBox from "../../modal/ModalGridBox";
 
 export default function WorkOrderGridBox() {
-  const { isOpen, openModal, closeModal } = useModal();
+  const {
+    isOpen: isModalGridBoxOpen,
+    openModal: openModalGridBox,
+    closeModal: closeModalGridBox,
+  } = useModal();
 
   const workOrders = [
     {
@@ -33,11 +37,15 @@ export default function WorkOrderGridBox() {
   ];
 
   return (
-    <div className="w-full bg-white px-3 py-4 grid grid-cols-1 md:grid-cols-5 gap-4">
+    <div className="w-full bg-white px-3 py-4 grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch">
       {Array.from({ length: 10 }).map((_, index) => {
         const wo = workOrders[index % workOrders.length];
         return (
-          <div key={index} onClick={openModal} className="cursor-pointer">
+          <div
+            key={index}
+            onClick={openModalGridBox}
+            className="cursor-pointer h-full"
+          >
             <GridBox
               woNumber={wo.woNumber}
               statusText={wo.statusText}
@@ -48,7 +56,7 @@ export default function WorkOrderGridBox() {
         );
       })}
 
-      <ModalGridBox isOpen={isOpen} onClose={closeModal} />
+      <ModalGridBox isOpen={isModalGridBoxOpen} onClose={closeModalGridBox} />
     </div>
   );
 }
