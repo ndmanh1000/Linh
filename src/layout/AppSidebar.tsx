@@ -49,7 +49,7 @@ const navItems: NavItem[] = [
   {
     icon: <BackwardIcon />,
     name: "Warehouse",
-    path: "#",
+    path: "/warehouse",
   },
   {
     icon: <FiUsers />,

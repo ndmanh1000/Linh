@@ -23,6 +23,7 @@ import PreventiveDetails from "./components/preventive-maint/preventive-maint-ta
 import VerdorsCustomers from "./pages/VerdorsCustomers";
 import Filess from "./pages/Filess";
 import CheckList from "./pages/CheckList";
+import Warehouse from "./pages/Warehouse";
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />
             <Route path="/checklist" element={<CheckList />} />
+            <Route path="/warehouse" element={<Warehouse />} />
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
