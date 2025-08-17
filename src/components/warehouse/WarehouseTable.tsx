@@ -59,7 +59,7 @@ export default function WarehouseTable() {
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full table border-separate border-spacing-y-2">
+      <table className="table-auto border-separate border-spacing-y-2">
         <thead
           className={`text-sm ${
             isAllSelected
@@ -67,7 +67,7 @@ export default function WarehouseTable() {
               : "bg-gray-50 text-gray-500"
           }`}
         >
-          <tr className="whitespace-nowrap w-full">
+          <tr className="w-full">
             <th className="p-3 text-left">
               <input
                 type="checkbox"
@@ -75,31 +75,31 @@ export default function WarehouseTable() {
                 onChange={toggleSelectAll}
               />
             </th>
-            <th className="p-3 text-left">Name</th>
-            <th className="p-3 text-left">Image</th>
-            <th className="p-3 text-left">Status</th>
-            <th className="p-3 text-left">Available Qty</th>
-            <th className="p-3 text-left">Allocated</th>
-            <th className="p-3 text-left">On Hand Qty</th>
-            <th className="p-3 text-left">Incoming Qty</th>
-            <th className="p-3 text-left">Location</th>
-            <th className="p-3 text-left">Barcode</th>
-            <th className="p-3 text-left">Tag</th>
-            <th className="p-3 text-left">Area</th>
-            <th className="p-3 text-left">Cost</th>
-            <th className="p-3 text-left">Category</th>
+            <th className="p-3 text-left whitespace-nowrap">Name</th>
+            <th className="p-3 text-left whitespace-nowrap">Image</th>
+            <th className="p-3 text-left whitespace-nowrap">Status</th>
+            <th className="p-3 text-left whitespace-nowrap">Available Qty</th>
+            <th className="p-3 text-left whitespace-nowrap">Allocated</th>
+            <th className="p-3 text-left whitespace-nowrap">On Hand Qty</th>
+            <th className="p-3 text-left whitespace-nowrap">Incoming Qty</th>
+            <th className="p-3 text-left whitespace-nowrap">Location</th>
+            <th className="p-3 text-left whitespace-nowrap">Barcode</th>
+            <th className="p-3 text-left whitespace-nowrap">Tag</th>
+            <th className="p-3 text-left whitespace-nowrap">Area</th>
+            <th className="p-3 text-left whitespace-nowrap">Cost</th>
+            <th className="p-3 text-left whitespace-nowrap">Category</th>
             <th className="p-3 text-left">Description</th>
-            <th className="p-3 text-left">Worker</th>
-            <th className="p-3 text-left">Vendor</th>
-            <th className="p-3 text-left">Date Created</th>
-            <th className="p-3 text-left">ID</th>
-            <th className="p-3 text-left">Part Number</th>
-            <th className="p-3 text-left">Customer</th>
+            <th className="p-3 text-left whitespace-nowrap">Worker</th>
+            <th className="p-3 text-left whitespace-nowrap">Vendor</th>
+            <th className="p-3 text-left whitespace-nowrap">Date Created</th>
+            <th className="p-3 text-left whitespace-nowrap">ID</th>
+            <th className="p-3 text-left whitespace-nowrap">Part Number</th>
+            <th className="p-3 text-left whitespace-nowrap">Customer</th>
             <th className="p-3 text-left">Additional Details</th>
-            <th className="p-3 text-left">Team</th>
-            <th className="p-3 text-left">Minimum Qty</th>
-            <th className="p-3 text-left">Maximum Qty</th>
-            <th className="p-3 text-left">Critical</th>
+            <th className="p-3 text-left whitespace-nowrap">Team</th>
+            <th className="p-3 text-left whitespace-nowrap">Minimum Qty</th>
+            <th className="p-3 text-left whitespace-nowrap">Maximum Qty</th>
+            <th className="p-3 text-left whitespace-nowrap">Critical</th>
           </tr>
         </thead>
 
@@ -126,17 +126,21 @@ export default function WarehouseTable() {
                     <FaImage className="text-gray-500" />
                   </div>
                 </td>
-                <td className="p-3">
+                <td className="p-3 whitespace-nowrap">
                   <span
                     className={`px-2 py-1 rounded-md text-xs font-medium ${item.statusColor}`}
                   >
                     {item.status}
                   </span>
                 </td>
-                <td className={`p-3 font-medium ${item.qtyColor}`}>
+                <td
+                  className={`p-3 font-medium ${item.qtyColor} whitespace-nowrap`}
+                >
                   {item.qty.toFixed(2)}
                 </td>
-                <td className="p-3">{item.allocated.toFixed(2)}</td>
+                <td className="p-3 whitespace-nowrap">
+                  {item.allocated.toFixed(2)}
+                </td>
               </tr>
             );
           })}
