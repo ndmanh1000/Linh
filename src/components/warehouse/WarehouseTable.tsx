@@ -59,8 +59,7 @@ export default function WarehouseTable() {
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full table-fixed border-separate border-spacing-y-2">
-        {/* THEAD */}
+      <table className="min-w-full table border-separate border-spacing-y-2">
         <thead
           className={`text-sm ${
             isAllSelected
@@ -69,62 +68,41 @@ export default function WarehouseTable() {
           }`}
         >
           <tr>
-            <th className="w-10 p-3 text-left">
+            <th className="p-3 text-left">
               <input
                 type="checkbox"
                 checked={isAllSelected}
                 onChange={toggleSelectAll}
               />
             </th>
-            <th className="w-40 p-3 text-left whitespace-nowrap overflow-hidden text-ellipsis">
-              Name
-            </th>
-            <th className="w-20 p-3 text-left whitespace-nowrap">Image</th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">Status</th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">
-              Available Qty
-            </th>
-            <th className="w-24 p-3 text-left whitespace-nowrap">Allocated</th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">
-              On Hand Qty
-            </th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">
-              Incoming Qty
-            </th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">Location</th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">Barcode</th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">Tag</th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">Area</th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">Cost</th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">Category</th>
-            <th className="w-48 p-3 text-left whitespace-nowrap overflow-hidden text-ellipsis">
-              Description
-            </th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">Worker</th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">Vendor</th>
-            <th className="w-40 p-3 text-left whitespace-nowrap">
-              Date Created
-            </th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">ID</th>
-            <th className="w-40 p-3 text-left whitespace-nowrap">
-              Part Number
-            </th>
-            <th className="w-40 p-3 text-left whitespace-nowrap">Customer</th>
-            <th className="w-48 p-3 text-left whitespace-nowrap overflow-hidden text-ellipsis">
-              Additional Details
-            </th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">Team</th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">
-              Minimum Qty
-            </th>
-            <th className="w-32 p-3 text-left whitespace-nowrap">
-              Maximum Qty
-            </th>
-            <th className="w-28 p-3 text-left whitespace-nowrap">Critical</th>
+            <th className="p-3 text-left">Name</th>
+            <th className="p-3 text-left">Image</th>
+            <th className="p-3 text-left">Status</th>
+            <th className="p-3 text-left">Available Qty</th>
+            <th className="p-3 text-left">Allocated</th>
+            <th className="p-3 text-left">On Hand Qty</th>
+            <th className="p-3 text-left">Incoming Qty</th>
+            <th className="p-3 text-left">Location</th>
+            <th className="p-3 text-left">Barcode</th>
+            <th className="p-3 text-left">Tag</th>
+            <th className="p-3 text-left">Area</th>
+            <th className="p-3 text-left">Cost</th>
+            <th className="p-3 text-left">Category</th>
+            <th className="p-3 text-left">Description</th>
+            <th className="p-3 text-left">Worker</th>
+            <th className="p-3 text-left">Vendor</th>
+            <th className="p-3 text-left">Date Created</th>
+            <th className="p-3 text-left">ID</th>
+            <th className="p-3 text-left">Part Number</th>
+            <th className="p-3 text-left">Customer</th>
+            <th className="p-3 text-left">Additional Details</th>
+            <th className="p-3 text-left">Team</th>
+            <th className="p-3 text-left">Minimum Qty</th>
+            <th className="p-3 text-left">Maximum Qty</th>
+            <th className="p-3 text-left">Critical</th>
           </tr>
         </thead>
 
-        {/* TBODY */}
         <tbody>
           {data.map((item, index) => {
             const isSelected = selected.includes(index);
@@ -132,7 +110,7 @@ export default function WarehouseTable() {
               <tr
                 key={index}
                 onClick={() => toggleSelect(index)}
-                className={`cursor-pointer rounded-lg shadow-sm transition-colors `}
+                className="cursor-pointer rounded-lg shadow-sm transition-colors"
               >
                 <td className="p-3 text-center">
                   <input
@@ -142,7 +120,7 @@ export default function WarehouseTable() {
                     onChange={() => toggleSelect(index)}
                   />
                 </td>
-                <td className="p-3 truncate">{item.name}</td>
+                <td className="p-3">{item.name}</td>
                 <td className="p-3">
                   <div className="w-10 h-10 bg-gray-200 flex items-center justify-center rounded-md">
                     <FaImage className="text-gray-500" />

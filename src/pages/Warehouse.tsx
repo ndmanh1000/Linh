@@ -2,7 +2,6 @@ import { MoreIcon } from "../icons";
 import { useState } from "react";
 import { useModal } from "../hooks/useModal";
 import WorkOrderTask from "../components/workorder/work-order-task/WorkOrderTask";
-import VerdorsCustomersTable from "../components/verdors-customers/VerdorsCustomersTable";
 import ModalCreateVendor from "../components/modal/ModalCreateVendor";
 import { ScanIcon } from "../icons";
 import ModalQr from "../components/modal/ModalQr";
@@ -12,11 +11,12 @@ import IncomingButton from "../components/warehouse/IncomingButton";
 import LocationButton from "../components/workorder/work-order-button/LocationButton";
 import TagButton from "../components/filess/ui/filess-button/TagButton";
 import WarehouseTable from "../components/warehouse/WarehouseTable";
+import ModalWareHouseCreatPart from "../components/modal/ModalWareHouseCreatPart";
 export default function Warehouse() {
   const {
-    isOpen: isModalCreateVendorOpen,
-    openModal: openModalCreateVendor,
-    closeModal: closeModalCreateVendor,
+    isOpen: isModalWareHouseCreatPartOpen,
+    openModal: openModalWareHouseCreatPart,
+    closeModal: closeModalWareHouseCreatPart,
   } = useModal();
   const {
     isOpen: isModalQrOpen,
@@ -84,7 +84,7 @@ export default function Warehouse() {
           <button
             className="border border-[#0C6FF9] bg-[#0C6FF9] text-white flex items-center justify-center px-2 py-2 rounded-[4px]"
             type="button"
-            onClick={openModalCreateVendor}
+            onClick={openModalWareHouseCreatPart}
           >
             Creater Part
           </button>
@@ -134,9 +134,9 @@ export default function Warehouse() {
           </div>
         )}
       </div>
-      <ModalCreateVendor
-        isOpen={isModalCreateVendorOpen}
-        onClose={closeModalCreateVendor}
+      <ModalWareHouseCreatPart
+        isOpen={isModalWareHouseCreatPartOpen}
+        onClose={closeModalWareHouseCreatPart}
       />
       <ModalQr isOpen={isModalQrOpen} onClose={closeModalQr} />
     </div>
