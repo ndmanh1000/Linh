@@ -67,7 +67,7 @@ export default function WarehouseTable() {
               : "bg-gray-50 text-gray-500"
           }`}
         >
-          <tr>
+          <tr className="whitespace-nowrap w-full">
             <th className="p-3 text-left">
               <input
                 type="checkbox"
