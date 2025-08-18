@@ -37,7 +37,7 @@ export default function WorkOrderGridBox() {
   ];
 
   return (
-    <div className="w-full bg-white px-3 py-4 grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch">
+    <div className="w-full bg-white px-3 py-4 grid grid-cols-1 md:grid-cols-5 gap-4 items-stretch">
       {Array.from({ length: 10 }).map((_, index) => {
         const wo = workOrders[index % workOrders.length];
         return (

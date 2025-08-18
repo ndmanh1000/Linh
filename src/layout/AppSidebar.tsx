@@ -54,7 +54,7 @@ const navItems: NavItem[] = [
   {
     icon: <FiUsers />,
     name: "People & Teams",
-    path: "#",
+    path: "/people-teams",
   },
   {
     icon: <MachinehealthIcon />,

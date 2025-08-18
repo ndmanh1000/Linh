@@ -1,6 +1,7 @@
 import React from "react";
 import image60 from "../../../../../public/images/work-order-grid-box/image60.png";
 import { LocationIcon, Boc1Icon, UserocIcon } from "../../../../icons";
+
 interface GridBoxProps {
   woNumber: string;
   statusText: string;
@@ -15,17 +16,19 @@ export default function GridBox({
   statusBg,
 }: GridBoxProps) {
   return (
-    <div className="w-full h-full bg-white px-3 py-4">
-      {" "}
-      {/* Thêm h-full */}
-      <div className="w-full h-full flex flex-col bg-white rounded-[4px] py-[16px] px-[10px] border-2 border-[#F3F3F3] relative">
+    <div className="w-full h-full bg-white px-2 sm:px-3 py-3 sm:py-4">
+      <div
+        className="h-full flex flex-col bg-white rounded-md sm:rounded-lg py-4 px-3 sm:px-4 border border-[#F3F3F3] relative
+                   max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto"
+      >
+        {/* Thanh viền trên */}
         <div className="w-full h-[5px] absolute -right-0 -top-1 bg-[#D9D9D9] rounded-tl-md rounded-tr-md"></div>
 
         {/* Header */}
-        <div className="w-full flex items-center justify-around">
-          <p>{woNumber}</p>
+        <div className="w-full flex items-center justify-between flex-wrap gap-2">
+          <p className="text-sm sm:text-base font-medium">{woNumber}</p>
           <div
-            className="border rounded-[4px] w-32 text-[14px] text-center px-[2px] py-[8px]"
+            className="border rounded-md min-w-[90px] sm:min-w-[120px] text-xs sm:text-sm text-center px-2 py-1"
             style={{ borderColor: statusColor, backgroundColor: statusBg }}
           >
             <p style={{ color: statusColor }}>{statusText}</p>
@@ -36,45 +39,54 @@ export default function GridBox({
 
         {/* Nội dung chính */}
         <div className="flex-1 flex flex-col justify-between">
-          {" "}
-          {/* Chiếm hết chiều cao còn lại */}
           {/* Image */}
-          <div className="flex items-center justify-center mt-2">
-            <img src={image60} alt="img60" className="max-w-full h-auto" />
+          <div className="flex items-center justify-center mt-3">
+            <img
+              src={image60}
+              alt="img60"
+              className="w-[80px] sm:w-[120px] md:w-[150px] h-auto object-contain"
+            />
           </div>
-          <div className="w-full border-b border-[#F3F3F3] mt-2"></div>
+          <div className="w-full border-b border-[#F3F3F3] mt-3"></div>
+
           {/* Info */}
-          <div className="w-full px-[6px] py-[16px] flex flex-col gap-4">
-            <div className="grid grid-cols-2 w-full">
-              <div className="flex items-center gap-2">
+          <div className="w-full px-1 sm:px-2 py-4 flex flex-col gap-4 text-xs sm:text-sm">
+            {/* Location */}
+            <div className="flex justify-between items-start gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <LocationIcon />
-                <p>Location</p>
+                <p className="font-medium">Location</p>
               </div>
-              <p>Suite B</p>
+              <p className="flex-1 text-right break-words">Suite B</p>
             </div>
 
-            <div className="grid grid-cols-2 w-full">
-              <div className="flex items-center gap-2">
+            {/* Assets */}
+            <div className="flex justify-between items-start gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <Boc1Icon />
-                <p>Assets</p>
+                <p className="font-medium">Assets</p>
               </div>
-              <p>TRANE HVAC Suite B Suite B</p>
+              <p className="flex-1 text-right break-words">
+                TRANE HVAC Suite B Suite B
+              </p>
             </div>
 
-            <div className="grid grid-cols-2 w-full">
-              <div className="flex items-center gap-2">
+            {/* Closeout Notes */}
+            <div className="flex justify-between items-start gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <Boc1Icon />
-                <p>Closeout Notes</p>
+                <p className="font-medium">Closeout Notes</p>
               </div>
-              <p>N/A</p>
+              <p className="flex-1 text-right break-words">N/A</p>
             </div>
 
-            <div className="grid grid-cols-2 w-full">
-              <div className="flex items-center gap-2">
+            {/* Assignee */}
+            <div className="flex justify-between items-start gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <UserocIcon />
-                <p>Assets</p>
+                <p className="font-medium">Assignee</p>
               </div>
-              <p>Trần Linh</p>
+              <p className="flex-1 text-right break-words">Trần Linh</p>
             </div>
           </div>
         </div>

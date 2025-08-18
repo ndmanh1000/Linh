@@ -24,6 +24,7 @@ import VerdorsCustomers from "./pages/VerdorsCustomers";
 import Filess from "./pages/Filess";
 import CheckList from "./pages/CheckList";
 import Warehouse from "./pages/Warehouse";
+import PeoPleTeam from "./pages/PeoPleTeam";
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
             <Route path="/form-elements" element={<FormElements />} />
             <Route path="/checklist" element={<CheckList />} />
             <Route path="/warehouse" element={<Warehouse />} />
+            <Route path="/people-teams" element={<PeoPleTeam />} />
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
