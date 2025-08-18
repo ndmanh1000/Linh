@@ -1,16 +1,17 @@
-import React from "react";
+//
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
 import FormInventoryLines from "../warehouse/FormInventoryLines";
 import Input from "../form/input/InputField";
 import Toggle from "../toggle-switch/Toggle";
-import { useState } from "react";
+//
 import FormVendorCustomer from "../warehouse/FormVendorCustomer";
 import { Textarea } from "flowbite-react";
 import FormPeopleTeam from "../warehouse/FormPeopleTeam";
 import FormAdditionalInformation from "../warehouse/FormAdditionalInformation";
 import FormCustomData from "../warehouse/FormCustomData";
+import UpFile10 from "../upload/UpFile10";
 
 interface ModalWareHouseCreatPartProps {
   isOpen: boolean;
@@ -85,19 +86,7 @@ export default function ModalWareHouseCreatPart({
                     <Label>Description</Label>
                     <Textarea />
                   </div>
-                  <div className="flex items-center justify-center w-full">
-                    <label className="flex flex-col w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                      <div className="flex flex-col items-center justify-center pt-2 pb-2">
-                        <span className="text-sm text-gray-500 flex items-center justify-center gap-2">
-                          <button className="border border-[#333333] bg-white h-10 w-30 rounded-[5px]">
-                            Upload
-                          </button>{" "}
-                          or Drop Images
-                        </span>
-                      </div>
-                      <input type="file" className="hidden" multiple />
-                    </label>
-                  </div>
+                  <UpFile10 />
                   <div className="text-[#0071FF] cursor-pointer">
                     Add from Saved Files
                   </div>

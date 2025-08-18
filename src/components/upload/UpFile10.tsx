@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 // import UserProfiles from "../../pages/UserProfiles";
 
-interface UploadFiles11Props {
+interface UpFile10Props {
   onFilesSelected?: (files: FileList) => void;
 }
 
-export default function UploadFiles11({ onFilesSelected }: UploadFiles11Props) {
+export default function UpFile10({ onFilesSelected }: UpFile10Props) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleClick = () => {

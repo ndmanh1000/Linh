@@ -1,10 +1,8 @@
-import React from "react";
+//
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
+import UpFile10 from "../upload/UpFile10";
 
 interface Option {
   value: string;
@@ -45,19 +43,7 @@ export default function ModalFiless({ isOpen, onClose }: ModalFilessProps) {
             <div className="mt-7 flex flex-col md:gap-4 gap-3">
               <div className="flex flex-col space-y-2">
                 <label className="text-sm text-gray-700">Files</label>
-                <div className="flex items-center justify-center w-full">
-                  <label className="flex flex-col w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                    <div className="flex flex-col items-center justify-center pt-2 pb-2">
-                      <span className="text-sm text-gray-500 flex items-center justify-center gap-2">
-                        <button className="border border-[#333333] bg-white h-10 w-30 rounded-[5px]">
-                          Upload
-                        </button>{" "}
-                        or Drop Images
-                      </span>
-                    </div>
-                    <input type="file" className="hidden" multiple />
-                  </label>
-                </div>
+                <UpFile10 />
               </div>
               <div className="w-full">
                 <Label>Tags</Label>
