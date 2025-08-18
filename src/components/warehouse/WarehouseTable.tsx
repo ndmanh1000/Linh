@@ -120,7 +120,7 @@ export default function WarehouseTable() {
                     onChange={() => toggleSelect(index)}
                   />
                 </td>
-                <td className="p-3">{item.name}</td>
+                <td className="p-3 whitespace-nowrap">{item.name}</td>
                 <td className="p-3">
                   <div className="w-10 h-10 bg-gray-200 flex items-center justify-center rounded-md">
                     <FaImage className="text-gray-500" />
