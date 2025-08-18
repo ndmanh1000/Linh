@@ -38,7 +38,12 @@ export default function OpenButton() {
   return (
     <div
       className="relative inline-block text-left w-full"
-      onBlur={() => setOpen(false)}
+      onBlur={(e) => {
+        const nextFocus = e.relatedTarget as Node | null;
+        if (!e.currentTarget.contains(nextFocus)) {
+          setOpen(false);
+        }
+      }}
       tabIndex={0}
     >
       {/* Nút chính hiển thị trạng thái đã chọn */}
@@ -49,9 +54,8 @@ export default function OpenButton() {
         <span className="text-lg">{selected.icon}</span>
         <span>{selected.label}</span>
         <svg
-          className={`ml-auto h-4 w-4 transition-transform ${
-            open ? "rotate-180" : "rotate-0"
-          }`}
+          className={`ml-auto h-4 w-4 transition-transform ${open ? "rotate-180" : "rotate-0"
+            }`}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"

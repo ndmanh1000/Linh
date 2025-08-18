@@ -1,5 +1,6 @@
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface Option {
   value: string;
@@ -24,6 +25,36 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
   const [selectedOptions, setSelectedOptions] =
     useState<string[]>(defaultSelected);
   const [isOpen, setIsOpen] = useState(false);
+
+  const triggerRef = useRef<HTMLDivElement | null>(null);
+  const [dropdownPosition, setDropdownPosition] = useState<{
+    top: number;
+    left: number;
+    width: number;
+  }>({ top: 0, left: 0, width: 0 });
+
+  const updateDropdownPosition = () => {
+    const element = triggerRef.current;
+    if (!element) return;
+    const rect = element.getBoundingClientRect();
+    setDropdownPosition({
+      top: rect.bottom + window.scrollY,
+      left: rect.left + window.scrollX,
+      width: rect.width,
+    });
+  };
+
+  useEffect(() => {
+    if (!isOpen) return;
+    updateDropdownPosition();
+    const onScrollOrResize = () => updateDropdownPosition();
+    window.addEventListener("scroll", onScrollOrResize, true);
+    window.addEventListener("resize", onScrollOrResize);
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize, true);
+      window.removeEventListener("resize", onScrollOrResize);
+    };
+  }, [isOpen]);
 
   const toggleDropdown = () => {
     if (!disabled) setIsOpen((prev) => !prev);
@@ -57,7 +88,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       <div className="relative z-20 inline-block w-full">
         <div className="relative flex flex-col items-center">
           <div onClick={toggleDropdown} className="w-full">
-            <div className="mb-2 flex h-11 rounded-lg border border-gray-300 py-1.5 pl-3 pr-3 shadow-theme-xs outline-hidden transition focus:border-brand-300 focus:shadow-focus-ring dark:border-gray-700 dark:bg-gray-900 dark:focus:border-brand-300">
+            <div ref={triggerRef} className="mb-2 flex h-11 rounded-lg border border-gray-300 py-1.5 pl-3 pr-3 shadow-theme-xs outline-hidden transition focus:border-brand-300 focus:shadow-focus-ring dark:border-gray-700 dark:bg-gray-900 dark:focus:border-brand-300">
               <div className="flex flex-wrap flex-auto gap-2">
                 {selectedValuesText.length > 0 ? (
                   selectedValuesText.map((text, index) => (
@@ -128,34 +159,42 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
             </div>
           </div>
 
-          {isOpen && (
-            <div
-              className="absolute left-0 z-40 w-full overflow-y-auto bg-white rounded-lg shadow-sm top-full max-h-select dark:bg-gray-900"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex flex-col">
-                {options.map((option, index) => (
-                  <div
-                    key={index}
-                    className={`hover:bg-primary/5 w-full cursor-pointer rounded-t border-b border-gray-200 dark:border-gray-800`}
-                    onClick={() => handleSelect(option.value)}
-                  >
+          {isOpen &&
+            createPortal(
+              <div
+                style={{
+                  position: "fixed",
+                  top: dropdownPosition.top,
+                  left: dropdownPosition.left,
+                  width: dropdownPosition.width,
+                  zIndex: 99999,
+                }}
+                className="overflow-y-auto bg-white rounded-lg shadow-sm max-h-select dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex flex-col">
+                  {options.map((option, index) => (
                     <div
-                      className={`relative flex w-full items-center p-2 pl-2 ${
-                        selectedOptions.includes(option.value)
+                      key={index}
+                      className={`hover:bg-primary/5 w-full cursor-pointer rounded-t border-b border-gray-200 dark:border-gray-800`}
+                      onClick={() => handleSelect(option.value)}
+                    >
+                      <div
+                        className={`relative flex w-full items-center p-2 pl-2 ${selectedOptions.includes(option.value)
                           ? "bg-primary/10"
                           : ""
-                      }`}
-                    >
-                      <div className="mx-2 leading-6 text-gray-800 dark:text-white/90">
-                        {option.text}
+                          }`}
+                      >
+                        <div className="mx-2 leading-6 text-gray-800 dark:text-white/90">
+                          {option.text}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+                  ))}
+                </div>
+              </div>,
+              document.body
+            )}
         </div>
       </div>
     </div>

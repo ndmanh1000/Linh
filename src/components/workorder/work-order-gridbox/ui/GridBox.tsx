@@ -1,4 +1,3 @@
-import React from "react";
 import image60 from "../../../../../public/images/work-order-grid-box/image60.png";
 import { LocationIcon, Boc1Icon, UserocIcon } from "../../../../icons";
 
@@ -44,7 +43,7 @@ export default function GridBox({
             <img
               src={image60}
               alt="img60"
-              className="w-[80px] sm:w-[120px] md:w-[150px] h-auto object-contain"
+              className="w-[80px] sm:w-[110px] md:w-[120px] lg:w-[150px] h-auto object-contain"
             />
           </div>
           <div className="w-full border-b border-[#F3F3F3] mt-3"></div>
