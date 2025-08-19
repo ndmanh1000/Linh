@@ -170,7 +170,7 @@ export default function ModalEditWorkOrder({
                       label="Date Start"
                       placeholder="Select a date"
                       onChange={(dates, currentDateString) => {
-                        // Handle your logic
+
                         console.log({ dates, currentDateString });
                       }}
                     />
@@ -181,7 +181,7 @@ export default function ModalEditWorkOrder({
                       label="Due Date"
                       placeholder="Select a date"
                       onChange={(dates, currentDateString) => {
-                        // Handle your logic
+
                         console.log({ dates, currentDateString });
                       }}
                     />

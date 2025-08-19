@@ -9,7 +9,7 @@ import Toggle from "../toggle-switch/Toggle";
 import { GoPlus } from "react-icons/go";
 import ModalPmAddPart from "./ModalPmAddPart";
 import { useModal } from "../../hooks/useModal";
-// import UploadFiles from "../upload/UploadFiles";
+
 import UpFile10 from "../upload/UpFile10";
 
 interface Option {
@@ -79,7 +79,7 @@ export default function ModalAddWorkOrderDetails({
                 </div>
 
                 <div className="flex items-center md:gap-2 gap-2">
-                  {/* Thêm props mặc định để tránh lỗi TS */}
+
                   <Checkbox checked={false} onChange={() => { }} />
                   Create first Work Order Now?
                 </div>
@@ -121,13 +121,13 @@ export default function ModalAddWorkOrderDetails({
                 <div className="w-full border-b border-[#F3F3F3] "></div>
                 <div>Attachments</div>
 
-                {/* Photos */}
+
                 <div className="flex flex-col space-y-2">
                   <label className="text-sm text-gray-700">Photos</label>
                   <UpFile10 />
                 </div>
 
-                {/* Files */}
+
                 <div className="flex flex-col space-y-2">
                   <label className="text-sm text-gray-700">Files</label>
                   <UpFile10 />

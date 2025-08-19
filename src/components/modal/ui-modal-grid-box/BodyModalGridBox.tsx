@@ -40,12 +40,12 @@ export default function BodyModalGridBox() {
   const getPriorityColor = () => {
     switch (priority) {
       case "High":
-        return "bg-orange-500"; // cam
+        return "bg-orange-500";
       case "Low":
-        return "bg-red-500"; // đỏ
+        return "bg-red-500";
       case "Medium":
       default:
-        return "bg-green-500"; // xanh lá
+        return "bg-green-500";
     }
   };
 
@@ -73,7 +73,7 @@ export default function BodyModalGridBox() {
       <div className="w-full border-b border-[#F3F3F3] md:mt-4 mt-3"></div>
       <div className="flex flex-col md:gap-4 gap-5">
         <div className="space-y-4 text-sm md:mt-3 mt-3">
-          {/* Location */}
+
           <div
             className="flex items-start relative"
             onMouseEnter={() => setHoveredRow("location")}
@@ -91,7 +91,7 @@ export default function BodyModalGridBox() {
             )}
           </div>
 
-          {/* Asset */}
+
           <div className="flex items-center w-full md:gap-4">
             <div className="w-40 text-gray-500">Asset</div>
             <div>
@@ -113,7 +113,7 @@ export default function BodyModalGridBox() {
           </div>
         </div>
 
-        {/* Priority */}
+
         <div className="flex items-start">
           <span className="w-40 text-gray-500">Priority</span>
           <div className="flex items-center space-x-2">
@@ -132,7 +132,7 @@ export default function BodyModalGridBox() {
           </div>
         </div>
 
-        {/* Closeout Notes */}
+
         <div
           className="flex items-start relative"
           onMouseEnter={() => setHoveredRow("closeoutNotes")}
@@ -150,7 +150,7 @@ export default function BodyModalGridBox() {
           )}
         </div>
 
-        {/* Category */}
+
         <div
           className="flex items-start relative"
           onMouseEnter={() => setHoveredRow("category")}
@@ -166,7 +166,7 @@ export default function BodyModalGridBox() {
           )}
         </div>
 
-        {/* Estimated Duration */}
+
         <div
           className="flex items-start relative"
           onMouseEnter={() => setHoveredRow("estimatedDuration")}
@@ -184,7 +184,7 @@ export default function BodyModalGridBox() {
           )}
         </div>
 
-        {/* Created */}
+
         <div className="flex items-start">
           <span className="w-40 text-gray-500">Created</span>
           <span>
@@ -195,7 +195,7 @@ export default function BodyModalGridBox() {
           </span>
         </div>
 
-        {/* Last Update */}
+
         <div className="flex items-start">
           <span className="w-40 text-gray-500">Last Update</span>
           <span>
@@ -206,13 +206,12 @@ export default function BodyModalGridBox() {
           </span>
         </div>
 
-        {/* Due Date */}
+
         <div className="flex items-start">
           <span className="w-40 text-gray-500">Due Date</span>
           <span>Aug 02, 2025 11:12 AM</span>
         </div>
 
-        {/* Primary Assignee */}
         <div
           className="flex items-start relative"
           onMouseEnter={() => setHoveredRow("primaryAssignee")}
@@ -233,7 +232,7 @@ export default function BodyModalGridBox() {
         </div>
       </div>
 
-      {/* Edit Modal */}
+
       {editModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96 transform transition-all duration-300 scale-100">

@@ -15,7 +15,7 @@ export default function OpenButton() {
     { label: "Complete", color: "text-blue-600", icon: "✓" },
   ];
 
-  // Load trạng thái từ localStorage
+
   useEffect(() => {
     const saved = localStorage.getItem("selectedStatus");
     if (saved) {
@@ -46,7 +46,7 @@ export default function OpenButton() {
       }}
       tabIndex={0}
     >
-      {/* Nút chính hiển thị trạng thái đã chọn */}
+
       <button
         onClick={handleToggle}
         className={`flex items-center w-full gap-2 border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 focus:outline-none ${selected.color}`}
@@ -70,11 +70,11 @@ export default function OpenButton() {
         </svg>
       </button>
 
-      {/* Dropdown chọn trạng thái */}
+
       {open && (
         <div className="absolute mt-1 md:w-48 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10">
           {options
-            .filter((option) => option.label !== selected.label) // ẩn option đang chọn
+            .filter((option) => option.label !== selected.label)
             .map((option) => (
               <button
                 key={option.label}

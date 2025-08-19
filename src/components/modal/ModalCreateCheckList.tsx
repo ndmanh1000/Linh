@@ -41,7 +41,7 @@ export default function ModalCreateCheckList({
       className="fixed inset-0 w-full h-full m-0 p-0"
     >
       <div className="no-scrollbar relative w-full  overflow-y-auto  bg-white p-4 dark:bg-gray-900 lg:p-11">
-        {/* Header */}
+
         <div className="px-2 pr-14">
           <h4 className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white/90">
             Create Checklist
@@ -49,11 +49,11 @@ export default function ModalCreateCheckList({
         </div>
         <div className="w-full border-b border-[#F3F3F3]" />
 
-        {/* Form */}
+
         <form className="flex flex-col">
           <div className="custom-scrollbar overflow-y-auto px-2 pb-3">
             <div className="mt-7 grid grid-cols-1 gap-3 md:flex items-start w-full md:gap-3">
-              {/* Left content */}
+
               <div className="flex-1">
                 <div className="flex flex-col gap-3 w-full mx-auto md:max-w-xl md:gap-3 gap-3">
                   <div>
@@ -89,14 +89,14 @@ export default function ModalCreateCheckList({
                 </div>
               </div>
 
-              {/* Right content */}
+
               <div className="flex-1 w-full mx-auto">
                 <TaskPreview />
               </div>
             </div>
           </div>
 
-          {/* Action buttons */}
+
           <div className="w-full flex items-center justify-end gap-2 md:gap-4 mt-3">
             <button
               type="button"

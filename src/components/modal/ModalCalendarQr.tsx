@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
@@ -22,6 +22,9 @@ export default function ModalCalendarQr({
   isOpen,
   onClose,
 }: ModalCalendarQrProps) {
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(false);
+
   const options10: Option[] = [
     { value: "tranlinh", label: "Trần Linh" },
     { value: "template", label: "A" },
@@ -67,7 +70,7 @@ export default function ModalCalendarQr({
 
               <div className="border-b border-[#F3F3F3]" />
 
-              {/* Schedule Interval */}
+
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <Label className="sm:w-40 w-full">Schedule Type</Label>
                 <div className="flex flex-col gap-3 w-full">
@@ -101,12 +104,15 @@ export default function ModalCalendarQr({
 
               <div className="border-b border-[#F3F3F3]" />
 
-              {/* Create WOs */}
+
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <Label className="sm:w-40 w-full">Create WOs</Label>
                 <div className="flex flex-col gap-3 w-full">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                    <Checkbox />
+                    <Checkbox
+                      checked={checkbox1}
+                      onChange={setCheckbox1}
+                    />
                     <Input className="w-full sm:w-20" />
                     <Select
                       options={options10}
@@ -117,7 +123,10 @@ export default function ModalCalendarQr({
                     <span>before the due date</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-                    <Checkbox />
+                    <Checkbox
+                      checked={checkbox2}
+                      onChange={setCheckbox2}
+                    />
                     <span>On the</span>
                     <Select
                       options={options10}
@@ -181,7 +190,7 @@ export default function ModalCalendarQr({
 
               <div className="border-b border-gray-200" />
 
-              {/* WOs Due */}
+
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Label className="w-full sm:w-40 font-medium text-gray-800">
                   WOs Due

@@ -82,7 +82,7 @@ export default function ModalEditCheckList({
                     </button>
                   </div>
                   <div className="flex items-center w-full border rounded-lg overflow-hidden">
-                    {/* Kéo thả + số thứ tự */}
+
                     <div className="flex items-center px-3 border-r">
                       <RxDragHandleDots2
                         className="text-gray-400 cursor-move mr-2"
@@ -91,7 +91,7 @@ export default function ModalEditCheckList({
                       <span className="text-sm font-medium">1</span>
                     </div>
 
-                    {/* Ô nhập nội dung */}
+
                     <div className="w-full flex items-center justify-between p-1">
                       <div className="border border-[#C2C2C2] px-[8px] py-[16px] bg-white rounded-[16px]  ">
                         <input
@@ -101,7 +101,7 @@ export default function ModalEditCheckList({
                         />
                       </div>
 
-                      {/* Trạng thái */}
+
                       <a
                         href="#"
                         className="text-blue-600 font-medium whitespace-nowrap px-3"
@@ -109,7 +109,7 @@ export default function ModalEditCheckList({
                         Sub-task Status
                       </a>
 
-                      {/* Nút xóa */}
+
 
                       <button
                         className="p-2 hover:bg-gray-100 rounded-full"
@@ -118,7 +118,7 @@ export default function ModalEditCheckList({
                         <MinusIcon className="text-gray-600" />
                       </button>
 
-                      {/* 3 chấm */}
+
                       <button
                         className="p-2 hover:bg-gray-100 rounded-full"
                         type="button"

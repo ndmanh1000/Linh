@@ -5,99 +5,91 @@ export default function Tabs() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      {/* Tabs */}
+
       <div className="flex flex-wrap border-b border-gray-200 w-full">
         <button
           type="button"
           onClick={() => setActiveTab("start")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "start"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "start"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Start Timer
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("tasks")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "tasks"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "tasks"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Tasks
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("labor")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "labor"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "labor"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Labor
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("parts")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "parts"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "parts"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Parts
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("costs")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "costs"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "costs"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Costs
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("files")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "files"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "files"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Files
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("activity")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "activity"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "activity"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Activity
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("links")}
-          className={`px-4 py-2 text-sm font-medium ${
-            activeTab === "links"
-              ? "text-blue-500 border-b-2 border-blue-500"
-              : "text-gray-500 hover:text-gray-700"
-          }`}
+          className={`px-4 py-2 text-sm font-medium ${activeTab === "links"
+            ? "text-blue-500 border-b-2 border-blue-500"
+            : "text-gray-500 hover:text-gray-700"
+            }`}
         >
           Links
         </button>
       </div>
 
-      {/* Content */}
+
       <div className="mt-4 p-4 border rounded-lg bg-gray-50">
         {activeTab === "start" && (
           <div>

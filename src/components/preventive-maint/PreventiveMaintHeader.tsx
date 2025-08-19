@@ -39,7 +39,7 @@ export default function PreventiveMaintHeader() {
       <div className="w-full flex items-center justify-between">
         <div>Preventive Maintenance</div>
         <div className="flex items-center md:gap-10 gap-5">
-          {/* Nút mở modal */}
+
           <button
             onClick={openModal}
             className="flex items-center gap-2 justify-center text-white bg-[#1677ff] px-2 py-2 rounded-[8px] hover:bg-blue-light-300 cursor-pointer"
@@ -56,7 +56,7 @@ export default function PreventiveMaintHeader() {
           </div>
         </div>
 
-        {/* Modal full màn hình */}
+
         <Modal
           isOpen={isOpen}
           onClose={closeModal}

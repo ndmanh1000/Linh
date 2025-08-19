@@ -3,14 +3,14 @@ import React from "react";
 export default function WorkOrderSearch() {
   return (
     <div className="flex items-center bg-gray-200 rounded-md px-3 py-1 w-60">
-      {/* Text Search */}
+
       <input
         type="text"
         placeholder="Search"
         className="flex-1 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-500"
       />
 
-      {/* Icon kính lúp */}
+
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-4 w-4 text-gray-500 cursor-pointer"

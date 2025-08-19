@@ -18,14 +18,14 @@ import ModalAddPart from "../modal/ModalAddPart";
 import ModalEditWorkOrder from "../modal/ui-edit-work-order/ModalEditWorkOrder";
 
 export default function GroupButton() {
-  // Modal cho AddTime
+
   const {
     isOpen: isTimeOpen,
     openModal: openTimeModal,
     closeModal: closeTimeModal,
   } = useModal();
 
-  // Modal cho AddCost
+
   const {
     isOpen: isCostOpen,
     openModal: openCostModal,
@@ -50,17 +50,17 @@ export default function GroupButton() {
 
   return (
     <div className="w-full flex items-center gap-4">
-      {/* Icon mở ModalAddTime */}
+
       <ClockIcon className="cursor-pointer" onClick={openTimeModal} />
 
-      {/* Icon mở ModalAddCost */}
+
       <DolarIcon className="cursor-pointer" onClick={openCostModal} />
 
       <BackwardIcon className="cursor-pointer" onClick={openPartModal} />
       <EditIcon1 className="cursor-pointer" onClick={openModalEditWorkOrder} />
       <LinkIcon className="cursor-pointer" />
 
-      {/* Dropdown */}
+
       <div className="relative">
         <MoreIcon className="cursor-pointer" onClick={toggleDropdown} />
         {isPlay && (
@@ -125,7 +125,7 @@ export default function GroupButton() {
         )}
       </div>
 
-      {/* Modals */}
+
       <ModalAddTime isOpen={isTimeOpen} onClose={closeTimeModal} />
       <ModalAddCost isOpen={isCostOpen} onClose={closeCostModal} />
       <ModalAddPart isOpen={isPartOpen} onClose={closePartModal} />

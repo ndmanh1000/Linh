@@ -68,16 +68,15 @@ export default function ModalPmAddPart({
                 </div>
               </div>
               <div className="w-full max-w-4xl mx-auto">
-                {/* Tabs */}
+
                 <div className="flex flex-wrap border-b border-gray-200 w-full">
                   <button
                     type="button"
                     onClick={() => setActiveTab("part")}
-                    className={`px-4 py-2 text-sm font-medium ${
-                      activeTab === "part"
-                        ? "text-blue-500 border-b-2 border-blue-500"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium ${activeTab === "part"
+                      ? "text-blue-500 border-b-2 border-blue-500"
+                      : "text-gray-500 hover:text-gray-700"
+                      }`}
                   >
                     Part
                   </button>
@@ -85,17 +84,16 @@ export default function ModalPmAddPart({
                   <button
                     type="button"
                     onClick={() => setActiveTab("sets")}
-                    className={`px-4 py-2 text-sm font-medium ${
-                      activeTab === "sets"
-                        ? "text-blue-500 border-b-2 border-blue-500"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium ${activeTab === "sets"
+                      ? "text-blue-500 border-b-2 border-blue-500"
+                      : "text-gray-500 hover:text-gray-700"
+                      }`}
                   >
                     Sets
                   </button>
                 </div>
 
-                {/* Content */}
+
                 <div className="mt-4 p-4 border rounded-lg bg-gray-50">
                   {activeTab === "part" && (
                     <div>

@@ -84,7 +84,7 @@ export default function WorkOrderHeader() {
       <div className="w-full flex items-center justify-between">
         <div>Work Orders</div>
         <div className="flex items-center md:gap-10 gap-5">
-          {/* Nút mở modal */}
+
           <button
             onClick={openModal}
             className="flex items-center gap-2 justify-center text-white bg-[#1677ff] px-2 py-2 rounded-[8px] hover:bg-blue-light-300 cursor-pointer"
@@ -183,7 +183,7 @@ export default function WorkOrderHeader() {
                           label="Date Start"
                           placeholder="Select a date"
                           onChange={(dates, currentDateString) => {
-                            // Handle your logic
+
                             console.log({ dates, currentDateString });
                           }}
                         />
@@ -194,7 +194,7 @@ export default function WorkOrderHeader() {
                           label="Due Date"
                           placeholder="Select a date"
                           onChange={(dates, currentDateString) => {
-                            // Handle your logic
+
                             console.log({ dates, currentDateString });
                           }}
                         />

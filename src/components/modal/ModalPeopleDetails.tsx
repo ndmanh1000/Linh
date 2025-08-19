@@ -8,7 +8,7 @@ import FormMoreInfor from "../people-teams/FormMoreInfor";
 import ModalPeopleTeamEdit from "./ModalPeopleTeamEdit";
 import { useModal } from "../../hooks/useModal";
 
-// === Component nhỏ để hiển thị Avatar + Tên + Role ===
+
 interface UserCardProps {
   name: string;
   role: string;
@@ -49,7 +49,7 @@ export default function ModalPeopleDetails({
       <Modal isOpen={isOpen} onClose={onClose} className="max-w-[700px] m-4">
         <div className="no-scrollbar relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
           <div className="px-2 pr-14 py-2">
-            {/* Thêm đoạn avatar + tên + role */}
+
             <UserCard name="Trần Linh" role="Administrator" />
           </div>
           <div className="w-full border-b border-[#F3F3F3]" />
@@ -63,11 +63,10 @@ export default function ModalPeopleDetails({
                       <button
                         type="button"
                         onClick={() => setActiveTab("details")}
-                        className={`px-4 py-2 text-sm font-medium ${
-                          activeTab === "details"
-                            ? "text-blue-500 border-b-2 border-blue-500"
-                            : "text-gray-500 hover:text-gray-700"
-                        }`}
+                        className={`px-4 py-2 text-sm font-medium ${activeTab === "details"
+                          ? "text-blue-500 border-b-2 border-blue-500"
+                          : "text-gray-500 hover:text-gray-700"
+                          }`}
                       >
                         Details
                       </button>
@@ -75,11 +74,10 @@ export default function ModalPeopleDetails({
                       <button
                         type="button"
                         onClick={() => setActiveTab("work-oder")}
-                        className={`px-4 py-2 text-sm font-medium ${
-                          activeTab === "work-oder"
-                            ? "text-blue-500 border-b-2 border-blue-500"
-                            : "text-gray-500 hover:text-gray-700"
-                        }`}
+                        className={`px-4 py-2 text-sm font-medium ${activeTab === "work-oder"
+                          ? "text-blue-500 border-b-2 border-blue-500"
+                          : "text-gray-500 hover:text-gray-700"
+                          }`}
                       >
                         Work Order
                       </button>

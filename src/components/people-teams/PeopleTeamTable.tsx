@@ -79,9 +79,8 @@ export default function PeopleTeamTable() {
           {data.map((user) => (
             <tr
               key={user.id}
-              className={`border-t cursor-pointer ${
-                selectedRows.includes(user.id) ? "bg-green-50" : "bg-white"
-              }`}
+              className={`border-t cursor-pointer ${selectedRows.includes(user.id) ? "bg-green-50" : "bg-white"
+                }`}
               onClick={openModalPeopleDetails}
             >
               <td className="px-4 py-2">
@@ -89,7 +88,7 @@ export default function PeopleTeamTable() {
                   type="checkbox"
                   checked={selectedRows.includes(user.id)}
                   onChange={() => toggleRow(user.id)}
-                  onClick={(e) => e.stopPropagation()} // chặn mở modal khi bấm checkbox
+                  onClick={(e) => e.stopPropagation()}
                 />
               </td>
               <td className="px-4 py-2 flex items-center gap-2">

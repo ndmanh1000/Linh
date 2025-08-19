@@ -10,7 +10,7 @@ type Vendor = {
   email: string;
   vendorType: string;
   website: string;
-  dateCreate: string; // ISO YYYY-MM-DD để sort chuẩn
+  dateCreate: string;
   hourlyRate: string;
 };
 
@@ -70,7 +70,7 @@ export default function VerdorsCustomersTable() {
   };
 
   const setSort = (dir: "asc" | "desc") => {
-    // click lại icon đang chọn để bỏ sort
+
     setSortOrder((cur) => (cur === dir ? null : dir));
   };
 
@@ -121,7 +121,7 @@ export default function VerdorsCustomersTable() {
                 Website
               </th>
 
-              {/* Date Create + 2 icon riêng biệt */}
+
               <th className="px-4 py-2 text-left font-medium text-gray-700">
                 <div className="flex items-center gap-2">
                   <span>Date Create</span>
@@ -130,10 +130,9 @@ export default function VerdorsCustomersTable() {
                       type="button"
                       onClick={() => setSort("asc")}
                       className={`p-1 rounded hover:bg-gray-100 transition
-                        ${
-                          sortOrder === "asc"
-                            ? "text-gray-900"
-                            : "text-gray-400"
+                        ${sortOrder === "asc"
+                          ? "text-gray-900"
+                          : "text-gray-400"
                         }`}
                       aria-pressed={sortOrder === "asc"}
                       title="Sort ascending"
@@ -144,10 +143,9 @@ export default function VerdorsCustomersTable() {
                       type="button"
                       onClick={() => setSort("desc")}
                       className={`p-1 rounded hover:bg-gray-100 transition
-                        ${
-                          sortOrder === "desc"
-                            ? "text-gray-900"
-                            : "text-gray-400"
+                        ${sortOrder === "desc"
+                          ? "text-gray-900"
+                          : "text-gray-400"
                         }`}
                       aria-pressed={sortOrder === "desc"}
                       title="Sort descending"
@@ -170,9 +168,8 @@ export default function VerdorsCustomersTable() {
               return (
                 <tr
                   key={vendor.id}
-                  className={`${
-                    isSelected ? "bg-blue-100" : "hover:bg-gray-50"
-                  } transition-colors`}
+                  className={`${isSelected ? "bg-blue-100" : "hover:bg-gray-50"
+                    } transition-colors`}
                 >
                   <td className="p-3">
                     <input

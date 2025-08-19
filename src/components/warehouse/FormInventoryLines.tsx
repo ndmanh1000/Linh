@@ -19,7 +19,7 @@ export default function FormInventoryLines() {
 
   return (
     <div className="w-full border border-[#f0f0f0] rounded-xl p-4 bg-white ">
-      {/* Header */}
+
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <h2 className="text-sm font-medium">Inventory Lines</h2>
@@ -30,7 +30,7 @@ export default function FormInventoryLines() {
         </button>
       </div>
 
-      {/* Table */}
+
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm border border-[#f0f0f0] border-collapse">
           <thead className="bg-gray-50">
@@ -97,7 +97,7 @@ export default function FormInventoryLines() {
         </table>
       </div>
 
-      {/* Add custom field */}
+
       <div className="mt-3">
         <button
           className="flex items-center gap-2 text-sm border rounded-md px-3 py-2 hover:bg-gray-50"

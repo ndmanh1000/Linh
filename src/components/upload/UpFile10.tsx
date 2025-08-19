@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-// import UserProfiles from "../../pages/UserProfiles";
+
 
 interface UpFile10Props {
   onFilesSelected?: (files: FileList) => void;

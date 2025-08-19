@@ -132,7 +132,7 @@ const PmTable: React.FC = () => {
                     id="date-picker"
                     placeholder="Select a date"
                     onChange={(dates, currentDateString) => {
-                      // Handle your logic
+
                       console.log({ dates, currentDateString });
                     }}
                   />

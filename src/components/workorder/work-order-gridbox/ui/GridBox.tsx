@@ -20,10 +20,10 @@ export default function GridBox({
         className="h-full flex flex-col bg-white rounded-md sm:rounded-lg py-4 px-3 sm:px-4 border border-[#F3F3F3] relative
                    max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto"
       >
-        {/* Thanh viền trên */}
+
         <div className="w-full h-[5px] absolute -right-0 -top-1 bg-[#D9D9D9] rounded-tl-md rounded-tr-md"></div>
 
-        {/* Header */}
+
         <div className="w-full flex items-center justify-between flex-wrap gap-2">
           <p className="text-sm sm:text-base font-medium">{woNumber}</p>
           <div
@@ -36,9 +36,9 @@ export default function GridBox({
 
         <div className="w-full border-b border-[#F3F3F3] mt-2"></div>
 
-        {/* Nội dung chính */}
+
         <div className="flex-1 flex flex-col justify-between">
-          {/* Image */}
+
           <div className="flex items-center justify-center mt-3">
             <img
               src={image60}
@@ -48,9 +48,9 @@ export default function GridBox({
           </div>
           <div className="w-full border-b border-[#F3F3F3] mt-3"></div>
 
-          {/* Info */}
+
           <div className="w-full px-1 sm:px-2 py-4 flex flex-col gap-4 text-xs sm:text-sm">
-            {/* Location */}
+
             <div className="flex justify-between items-start gap-2">
               <div className="flex items-center gap-2 shrink-0">
                 <LocationIcon />
@@ -59,7 +59,7 @@ export default function GridBox({
               <p className="flex-1 text-right break-words">Suite B</p>
             </div>
 
-            {/* Assets */}
+
             <div className="flex justify-between items-start gap-2">
               <div className="flex items-center gap-2 shrink-0">
                 <Boc1Icon />
@@ -70,7 +70,7 @@ export default function GridBox({
               </p>
             </div>
 
-            {/* Closeout Notes */}
+
             <div className="flex justify-between items-start gap-2">
               <div className="flex items-center gap-2 shrink-0">
                 <Boc1Icon />
@@ -79,7 +79,7 @@ export default function GridBox({
               <p className="flex-1 text-right break-words">N/A</p>
             </div>
 
-            {/* Assignee */}
+
             <div className="flex justify-between items-start gap-2">
               <div className="flex items-center gap-2 shrink-0">
                 <UserocIcon />

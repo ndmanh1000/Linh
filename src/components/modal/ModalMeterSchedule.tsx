@@ -30,21 +30,21 @@ export default function ModalMeterSchedule({
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="max-w-[700px] m-4">
       <div className="relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 lg:p-8">
-        {/* Header */}
+
         <div className="mb-4">
           <h4 className="text-2xl font-semibold text-gray-800">
             Add Meter Schedule
           </h4>
         </div>
 
-        {/* Info Box */}
+
         <div className="mb-6 rounded-lg border border-gray-200 bg-gray-100 p-4 text-gray-600 text-sm">
           When editing the PM’s records, you can set a specific meter and unit
           baseline for each record applied to this schedule.
         </div>
 
         <form className="flex flex-col gap-6">
-          {/* Create WOs */}
+
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Label className="w-full sm:w-40 font-medium text-gray-800">
               Create WOs
@@ -72,7 +72,7 @@ export default function ModalMeterSchedule({
 
           <div className="border-b border-gray-200" />
 
-          {/* WOs Due */}
+
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Label className="w-full sm:w-40 font-medium text-gray-800">
               WOs Due
@@ -89,7 +89,7 @@ export default function ModalMeterSchedule({
             </div>
           </div>
 
-          {/* Footer buttons */}
+
           <div className="flex justify-end gap-3 pt-4 border-t border-gray-200">
             <button
               type="button"

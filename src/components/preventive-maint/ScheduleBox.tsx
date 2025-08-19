@@ -30,13 +30,13 @@ export default function ScheduleBox({ closeBox }: ScheduleBoxProps) {
   } = useModal();
 
   const handleClickCalendar = () => {
-    if (closeBox) closeBox(); // đóng box trước
-    openModalCalendar(); // mở modal Calendar
+    if (closeBox) closeBox();
+    openModalCalendar();
   };
 
   return (
     <div className="absolute md:w-[700px] w-96 rounded-[8px] border border-[#D9D9D9] bg-white shadow-lg p-4 z-40">
-      {/* Calendar */}
+
       <div
         className="flex items-start gap-3 px-4 py-3 hover:bg-blue-100 cursor-pointer"
         onClick={handleClickCalendar}
@@ -51,7 +51,7 @@ export default function ScheduleBox({ closeBox }: ScheduleBoxProps) {
       </div>
       <div className="border-t border-gray-200"></div>
 
-      {/* Meter readings */}
+
       <div
         className="flex items-start gap-3 px-4 py-3 hover:bg-blue-100 cursor-pointer"
         onClick={openModalMeterSchedule}
@@ -66,7 +66,7 @@ export default function ScheduleBox({ closeBox }: ScheduleBoxProps) {
       </div>
       <div className="border-t border-gray-200"></div>
 
-      {/* Calendar OR meter readings */}
+
       <div
         className="flex items-start gap-3 px-4 py-3 hover:bg-blue-100 cursor-pointer"
         onClick={openModalCalendarQr}
@@ -82,7 +82,7 @@ export default function ScheduleBox({ closeBox }: ScheduleBoxProps) {
         </div>
       </div>
 
-      {/* Modal Calendar */}
+
       <ModalCalendar
         isOpen={isModalCalendarOpen}
         onClose={closeModalCalendar}

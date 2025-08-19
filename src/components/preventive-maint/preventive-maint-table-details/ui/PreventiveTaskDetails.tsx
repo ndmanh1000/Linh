@@ -18,18 +18,18 @@ export default function PreventiveTaskDetails() {
   };
   return (
     <div className="flex flex-col md:flex-row bg-white md:min-h-screen p-4 gap-4">
-      {/* Main Content */}
+
       <div className="flex-1 space-y-4">
-        {/* Job Card */}
+
         <div className="bg-white rounded-lg shadow p-4 border">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-4">
-            {/* Left side: title */}
+
             <div className="flex-1">
               <h2 className="text-lg font-semibold">Kiểm tra máy điều hoà</h2>
               <p className="text-gray-500 text-sm">sgrt</p>
             </div>
 
-            {/* Right side: select + edit */}
+
             <div className="flex items-center gap-3  ">
               <Select
                 options={options10}
@@ -57,7 +57,7 @@ export default function PreventiveTaskDetails() {
           </div>
         </div>
 
-        {/* Task Card */}
+
         <div className="bg-white rounded-lg shadow p-4 border">
           <div className="flex justify-between items-center">
             <h3 className="text-md font-semibold">Test1</h3>
@@ -77,7 +77,7 @@ export default function PreventiveTaskDetails() {
         </div>
       </div>
 
-      {/* Sidebar */}
+
       <div className="w-full md:w-1/4 bg-white rounded-lg shadow p-4 border">
         <h4 className="text-md font-semibold mb-4">Activity</h4>
         <div className="md:flex items-center grid grid-cols-1 md:gap-2 gap-2 w-full">
