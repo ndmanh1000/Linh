@@ -40,6 +40,8 @@ export default function PeoPleTeam() {
     closeModal: closeModalAddTeam,
   } = useModal();
 
+  const [includeDeactivated, setIncludeDeactivated] = useState(false);
+
   const [activeTab, setActiveTab] = useState("People");
   return (
     <div className="w-full flex flex-col md:gap-4 gap-3">
@@ -146,7 +148,10 @@ export default function PeoPleTeam() {
             <WorkOrderTask />
             <div className=" grid grid-cols-1 md:flex items-center md:gap-4 gap-4">
               <AccountTypeButton />
-              <Checkbox />
+              <Checkbox
+                checked={includeDeactivated}
+                onChange={setIncludeDeactivated}
+              />
               <p>Include Deactivated</p>
               <p className="cursor-pointer font-medium text-[#007FE6]">Reset</p>
             </div>
