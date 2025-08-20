@@ -9,15 +9,35 @@ import PeopleTeamTable from "../components/people-teams/PeopleTeamTable";
 import WarehouseTable from "../components/warehouse/WarehouseTable";
 import ModalWareHouseCreatPart from "../components/modal/ModalWareHouseCreatPart";
 import Checkbox from "../components/form/input/Checkbox";
+import ModalAddTeam from "../components/modal/ModalAddTeam";
+import ModalDeactive from "../components/modal/ModalDeactive";
+import ModalDeletePerson from "../components/modal/ModalDeletePerson";
 
 import AccountTypeButton from "../components/people-teams/AccountTypeButton";
 export default function PeoPleTeam() {
   const [showMenu, setShowMenu] = useState(false);
 
   const {
+    isOpen: isModalDeactiveOpen,
+    openModal: openModalDeactive,
+    closeModal: closeModalDeactive,
+  } = useModal();
+
+  const {
+    isOpen: isModalDeletePersonOpen,
+    openModal: openModalDeletePerson,
+    closeModal: closeModalDeletePerson,
+  } = useModal();
+
+  const {
     isOpen: isModalQrOpen,
     openModal: openModalQr,
     closeModal: closeModalQr,
+  } = useModal();
+  const {
+    isOpen: isModalAddTeamOpen,
+    openModal: openModalAddTeam,
+    closeModal: closeModalAddTeam,
   } = useModal();
 
   const [activeTab, setActiveTab] = useState("People");
@@ -58,8 +78,9 @@ export default function PeoPleTeam() {
           <button
             className="border border-[#0C6FF9] bg-[#0C6FF9] text-white flex items-center justify-center px-2 py-2 rounded-[4px]"
             type="button"
+            onClick={openModalAddTeam}
           >
-            Add Person
+            Add Team
           </button>
           <MoreIcon
             onClick={() => setShowMenu(!showMenu)}
@@ -68,7 +89,11 @@ export default function PeoPleTeam() {
           {showMenu && (
             <div className="absolute right-4 top-32 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
               <div className="py-1">
-                <button className="flex items-center px-4 py-2 text-sm text-pink-600 hover:bg-gray-100 w-full text-left">
+                <button
+                  className="flex items-center px-4 py-2 text-sm text-pink-600 hover:bg-gray-100 w-full text-left"
+                  type="button"
+                  onClick={openModalDeactive}
+                >
                   <svg
                     className="w-5 h-5 mr-2"
                     fill="none"
@@ -85,7 +110,11 @@ export default function PeoPleTeam() {
                   </svg>
                   Deactivate
                 </button>
-                <button className="flex items-center px-4 py-2 text-sm text-pink-600 hover:bg-gray-100 w-full text-left">
+                <button
+                  className="flex items-center px-4 py-2 text-sm text-pink-600 hover:bg-gray-100 w-full text-left"
+                  type="button"
+                  onClick={openModalDeletePerson}
+                >
                   <svg
                     className="w-5 h-5 mr-2"
                     fill="none"
@@ -127,14 +156,47 @@ export default function PeoPleTeam() {
         )}
 
         {activeTab === "teams" && (
-          <div>
-            <h2 className="text-lg font-semibold">Tasks Content</h2>
-            <p>Danh sách các công việc cần làm sẽ hiển thị ở đây.</p>
+          <div className="flex flex-col items-center justify-center gap-2 md:gap-6 w-full min-h-[60vh]">
+            <div className="text-[20px] font-semibold">No Teams</div>
+            <div className="flex flex-col items-center gap-2 md:gap-5">
+              <div className="text-[#949494C9]">
+                You can begin by creating or importing teams.
+              </div>
+              <div className="flex items-center gap-2 md:gap-3">
+                <div>
+                  {" "}
+                  <button
+                    type="button"
+                    className="border border-gray-300 bg-white flex items-center justify-center px-2 py-2 rounded-[4px]"
+                  >
+                    Create Team
+                  </button>
+                </div>
+                <div>
+                  {" "}
+                  <button
+                    type="button"
+                    className="border border-gray-300 bg-white flex items-center justify-center px-2 py-2 rounded-[4px]"
+                  >
+                    Import Teams
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
 
       <ModalQr isOpen={isModalQrOpen} onClose={closeModalQr} />
+      <ModalAddTeam isOpen={isModalAddTeamOpen} onClose={closeModalAddTeam} />
+      <ModalDeactive
+        isOpen={isModalDeactiveOpen}
+        onClose={closeModalDeactive}
+      />
+      <ModalDeletePerson
+        isOpen={isModalDeletePersonOpen}
+        onClose={closeModalDeletePerson}
+      />
     </div>
   );
 }
