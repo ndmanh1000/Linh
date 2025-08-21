@@ -25,6 +25,8 @@ import Filess from "./pages/Filess";
 import CheckList from "./pages/CheckList";
 import Warehouse from "./pages/Warehouse";
 import PeoPleTeam from "./pages/PeoPleTeam";
+import Assets from "./pages/Assets";
+import AssetsTask1 from "./components/assets/AssetsTask1";
 
 export default function App() {
   return (
@@ -49,6 +51,9 @@ export default function App() {
             <Route path="/checklist" element={<CheckList />} />
             <Route path="/warehouse" element={<Warehouse />} />
             <Route path="/people-teams" element={<PeoPleTeam />} />
+            <Route path="/assets" element={<Assets />} />
+            <Route path="/assets-task1" element={<AssetsTask1 />} />
+
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />

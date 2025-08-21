@@ -44,7 +44,7 @@ const navItems: NavItem[] = [
   {
     icon: <FiBox />,
     name: "Assets",
-    path: "#",
+    path: "/assets",
   },
   {
     icon: <BackwardIcon />,
