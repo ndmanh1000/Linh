@@ -92,7 +92,7 @@ export default function FormCreateAssets() {
 
           <div className="space-y-4">
             <Label>Barcode Options</Label>
-            <div className="flex items-center space-x-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
               <Checkbox
                 checked={barcodeOption === "custom"}
                 onChange={() => setBarcodeOption("custom")}
@@ -167,11 +167,11 @@ export default function FormCreateAssets() {
 
         {/* Part Section */}
         <div className="space-y-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <h2 className="text-xl font-semibold text-gray-800">Part</h2>
             <button
               type="button"
-              className="border border-[#949494] bg-white text-black h-10 rounded-[4px] px-4 py-2 hover:bg-gray-50 transition-colors"
+              className="border border-[#949494] bg-white text-black h-10 rounded-[4px] px-4 py-2 hover:bg-gray-50 transition-colors whitespace-nowrap"
             >
               Add Parts
             </button>
@@ -192,16 +192,16 @@ export default function FormCreateAssets() {
         </div>
 
         {/* Form Actions */}
-        <div className="flex items-center justify-end space-x-4 pt-6 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-3 sm:space-x-4 pt-6 border-t border-gray-200">
           <button
             type="button"
-            className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+            className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors order-2 sm:order-1"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors order-1 sm:order-2"
           >
             Create Asset
           </button>

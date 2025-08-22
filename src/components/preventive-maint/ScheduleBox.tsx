@@ -35,7 +35,7 @@ export default function ScheduleBox({ closeBox }: ScheduleBoxProps) {
   };
 
   return (
-    <div className="absolute md:w-[700px] w-96 rounded-[8px] border border-[#D9D9D9] bg-white shadow-lg p-4 z-40">
+    <div className="absolute md:w-[700px] w-96 rounded-[8px] border border-[#D9D9D9] md:bottom-17 bg-white shadow-lg p-4 z-40 w-[350px] top-74">
 
       <div
         className="flex items-start gap-3 px-4 py-3 hover:bg-blue-100 cursor-pointer"
