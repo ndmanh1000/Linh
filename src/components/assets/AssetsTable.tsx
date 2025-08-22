@@ -134,7 +134,7 @@ const AssetsTable: React.FC = () => {
                 <td className="p-3">
                   <div className="w-9 h-9 bg-gray-200 flex items-center justify-center rounded-md">
                     {row.image ? (
-                      // eslint-disable-next-line @next/next/no-img-element
+                    
                       <img src={row.image} alt={row.name} className="w-9 h-9 object-cover rounded" />
                     ) : (
                       <FaImage className="text-gray-500" />
