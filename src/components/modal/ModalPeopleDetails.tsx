@@ -46,8 +46,8 @@ export default function ModalPeopleDetails({
 
   return (
     <div>
-      <Modal isOpen={isOpen} onClose={onClose} className="max-w-[700px] m-4">
-        <div className="no-scrollbar relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
+      <Modal isOpen={isOpen} onClose={onClose} className="max-w-[900px] m-4">
+        <div className="no-scrollbar relative w-full max-w-[900px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
           <div className="px-2 pr-14 py-2">
 
             <UserCard name="Trần Linh" role="Administrator" />
@@ -55,7 +55,7 @@ export default function ModalPeopleDetails({
           <div className="w-full border-b border-[#F3F3F3]" />
 
           <form className="flex flex-col">
-            <div className="custom-scrollbar h-[450px] overflow-y-auto px-2 pb-3">
+            <div className="custom-scrollbar h-[500px] overflow-y-auto px-2 pb-3">
               <div className="mt-7 flex flex-col md:gap-4 gap-3">
                 <div className="grid grid-cols-1 md:flex items-center justify-between">
                   <div>

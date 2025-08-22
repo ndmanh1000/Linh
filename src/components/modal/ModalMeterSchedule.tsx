@@ -28,8 +28,8 @@ export default function ModalMeterSchedule({
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="max-w-[700px] m-4">
-      <div className="relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 lg:p-8">
+    <Modal isOpen={isOpen} onClose={onClose} className="max-w-[900px] m-4">
+      <div className="relative w-full max-w-[900px] overflow-y-auto rounded-3xl bg-white p-4 lg:p-8">
 
         <div className="mb-4">
           <h4 className="text-2xl font-semibold text-gray-800">

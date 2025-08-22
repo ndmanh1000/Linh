@@ -27,6 +27,8 @@ import Warehouse from "./pages/Warehouse";
 import PeoPleTeam from "./pages/PeoPleTeam";
 import Assets from "./pages/Assets";
 import AssetsTask1 from "./components/assets/AssetsTask1";
+import Requestss from "./pages/Requestss";
+
 
 export default function App() {
   return (
@@ -53,6 +55,8 @@ export default function App() {
             <Route path="/people-teams" element={<PeoPleTeam />} />
             <Route path="/assets" element={<Assets />} />
             <Route path="/assets-task1" element={<AssetsTask1 />} />
+            <Route path="/request" element={<Requestss />} />
+          
 
 
             {/* Tables */}

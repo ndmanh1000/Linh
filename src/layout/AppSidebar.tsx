@@ -52,6 +52,11 @@ const navItems: NavItem[] = [
     path: "/warehouse",
   },
   {
+    icon: <BackwardIcon />,
+    name: "ReQuest",
+    path: "/request",
+  },
+  {
     icon: <FiUsers />,
     name: "People & Teams",
     path: "/people-teams",
@@ -341,7 +346,7 @@ const AppSidebar: React.FC = () => {
             />
           </Link>
         </div>
-        <div>RelMa</div>
+        <div>REAIL-MAINT</div>
       </div>
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
         <nav className="mb-6">

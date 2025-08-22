@@ -38,8 +38,8 @@ export default function ModalAddTime({ isOpen, onClose }: ModalAddTimeProps) {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="max-w-[700px] m-4">
-      <div className="no-scrollbar relative w-full max-w-[700px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
+    <Modal isOpen={isOpen} onClose={onClose} className="max-w-[900px] m-4">
+      <div className="no-scrollbar relative w-full max-w-[900px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
         <div className="px-2 pr-14">
           <h4 className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white/90">
             Add Time
@@ -48,7 +48,7 @@ export default function ModalAddTime({ isOpen, onClose }: ModalAddTimeProps) {
         <div className="w-full border-b border-[#F3F3F3]"></div>
 
         <form className="flex flex-col">
-          <div className="custom-scrollbar h-[450px] overflow-y-auto px-2 pb-3">
+          <div className="custom-scrollbar h-[500px] overflow-y-auto px-2 pb-3">
             <div className="mt-7">
               <div className="grid grid-cols-1 md:flex items-center md:gap-2 gap-3">
                 <div className="w-full">

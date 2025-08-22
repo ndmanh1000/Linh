@@ -94,7 +94,7 @@ const AppHeader: React.FC = () => {
                 />
               </Link>
             </div>
-            <div className="text-2xl font-medium">RelMa</div>
+            <div className="text-2xl font-medium">REAIL-MAINT</div>
           </div>
 
           <button
