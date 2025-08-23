@@ -26,6 +26,9 @@ const RequestFormDetails: React.FC = () => {
     team: ""
   });
 
+  const [imageFiles, setImageFiles] = useState<File[]>([]);
+  const [documentFiles, setDocumentFiles] = useState<File[]>([]);
+
   const {
     isOpen: isModalRequestDeclineOpen,
     openModal: openModalRequestDecline,
@@ -40,6 +43,7 @@ const RequestFormDetails: React.FC = () => {
   };
 
   const handleInputChange = (field: string, value: string) => {
+    console.log('handleInputChange called:', field, value);
     setFormData(prev => ({
       ...prev,
       [field]: value
@@ -78,6 +82,18 @@ const RequestFormDetails: React.FC = () => {
     { value: "team3", label: "Team 3" }
   ];
 
+  const handleFormSubmit = () => {
+    const formDataWithFiles = {
+      ...formData,
+      imageFiles,
+      documentFiles
+    };
+    
+    console.log("Form submitted with data:", formDataWithFiles);
+    // Ở đây bạn có thể gửi dữ liệu lên server
+    // formDataWithFiles sẽ chứa tất cả thông tin form và files
+  };
+
   return (
     <div className="w-full">
       {/* Header with Details Tab */}
@@ -112,11 +128,12 @@ const RequestFormDetails: React.FC = () => {
         <div className="space-y-2">
           <Label htmlFor="description">Description</Label>
           <TextArea
+            id="description"
             placeholder="Enter description"
             rows={4}
-            value={formData.description}
+            value={formData.description || ""}
             onChange={(value) => handleInputChange("description", value)}
-            className="w-full resize-none"
+            className="resize-none"
           />
         </div>
 
@@ -134,7 +151,18 @@ const RequestFormDetails: React.FC = () => {
         {/* Image Upload Section */}
         <div className="space-y-2">
           <Label>Image</Label>
-          <UpFile10 onFilesSelected={(files) => console.log("Image files selected:", files)} />
+          <UpFile10 
+            onFilesSelected={(files) => {
+              console.log("Image files selected:", files);
+              setImageFiles(files);
+            }}
+            onFileData={(fileData) => {
+              console.log("Image file data:", fileData);
+            }}
+            multiple={false}
+            maxSize={5}
+            fileTypes={["image/png", "image/jpeg", "image/jpg", "image/webp"]}
+          />
         </div>
 
         {/* Start Date and Due Date */}
@@ -212,33 +240,51 @@ const RequestFormDetails: React.FC = () => {
         {/* Files Upload Section */}
         <div className="space-y-2">
           <Label>Files</Label>
-          <UpFile10 onFilesSelected={(files) => console.log("Files selected:", files)} />
+          <UpFile10 
+            onFilesSelected={(files) => {
+              console.log("Files selected:", files);
+              setDocumentFiles(files);
+            }}
+            onFileData={(fileData) => {
+              console.log("Files data:", fileData);
+            }}
+            multiple={true}
+            maxSize={10}
+            accept="*"
+            fileTypes={[]} // Empty array means accept all file types
+          />
         </div>
       </div>
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-gray-200">
+        <div>
         <button
           type="button"
-          className="w-full sm:w-auto px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+          className="w-full sm:w-auto px-6 py-3 bg-[#E01E5A] text-white rounded-lg transition-colors"
           onClick={openModalRequestDecline}
         >
           Decline Request
         </button>
-
-        <button
+        </div>
+       <div className="flex items-center md:gap-2 gap-2">
+       <button
           type="button"
-          className="w-full sm:w-auto px-6 py-3 bg-white text-green-600 border-2 border-green-600 rounded-lg hover:bg-green-50 transition-colors"
+          onClick={handleFormSubmit}
+          className="w-full sm:w-auto px-6 py-3 bg-white text-black border-2 border-[#D9D9D9] rounded-lg  transition-colors hover:bg-gray-50"
         >
           Save Without Approving
         </button>
 
         <button
           type="button"
-          className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-lg  transition-colors"
         >
           Approve Request
         </button>
+       </div>
+
+        
       </div>
       <ModalRequestDecline
         isOpen={isModalRequestDeclineOpen}
