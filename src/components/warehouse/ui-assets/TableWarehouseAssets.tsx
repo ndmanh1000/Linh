@@ -1,7 +1,7 @@
 import React from "react";
 import { FaImage } from "react-icons/fa";
 
-export default function FormWarehouseAssets() {
+export default function TableWarehouseAssets() {
     const data = [
         {
             name: "Linh",

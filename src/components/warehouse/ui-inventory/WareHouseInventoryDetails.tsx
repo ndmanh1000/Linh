@@ -3,13 +3,14 @@ import { LayoutLineIcon, MoreIcon } from "../../../icons";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import InventoryTable1 from "./InventoryTable1";
-import FormWarehouseDetails from "../ui-details/FormWarehouseDetails";
-import Label from "../../form/Label";
-import Select from "../../form/Select";
-import FormWarrehouseWorkOrder from "../ui-work-order/FormWarrehouseWorkOrder";
-import FormWarehouseAssets from "../ui-assets/FormWarehouseAssets";
-import FormWarehouseAdjust from "../ui-adjustments/FormWarehouseAdjust";
+import FormWarehouseDetails from "../ui-details/TableWarehouseDetails";
+
+
 import SelectDropdawn from "../../SelectDropdawn";
+import TableWarrehouseWorkOrder from "../ui-adjustments/TableWarehouseAdjust";
+import TableWarehouseAssets from "../ui-assets/TableWarehouseAssets";
+import TableWarehouseAdjust from "../ui-adjustments/TableWarehouseAdjust";
+
 
 export default function WareHouseInventoryDetails() {
   interface Option {
@@ -157,7 +158,7 @@ export default function WareHouseInventoryDetails() {
                   <SelectDropdawn />
                 </div>
                 <div>
-                  <FormWarrehouseWorkOrder />
+                  <TableWarrehouseWorkOrder />
                 </div>
               </div>
             )}
@@ -175,7 +176,7 @@ export default function WareHouseInventoryDetails() {
                   </div>
                 </div>
                 <div>
-                  <FormWarehouseAssets />
+                  <TableWarehouseAssets />
                 </div>
               </div>
 
@@ -188,7 +189,7 @@ export default function WareHouseInventoryDetails() {
             )}
             {activeTab === "adjustments" && (
               <div>
-                <FormWarehouseAdjust />
+                <TableWarehouseAdjust />
               </div>
             )}
 

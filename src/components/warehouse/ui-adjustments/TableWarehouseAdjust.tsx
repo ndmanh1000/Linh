@@ -14,7 +14,7 @@ interface Adjustment {
     details: string;
 }
 
-export default function FormWarehouseAdjust() {
+export default function TableWarehouseAdjust() {
     const data: Adjustment[] = [
         {
             date: "07/01/25",

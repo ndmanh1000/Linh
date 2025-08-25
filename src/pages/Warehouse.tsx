@@ -18,6 +18,8 @@ import ModalWareHouseCreatPart from "../components/modal/ModalWareHouseCreatPart
 import ModalCreateSet from "../components/modal/ModalCreateSet";
 import ModalCreateCycleCount from "../components/modal/ModalCreateCycleCount";
 import TableCycleCounts from "../components/warehouse/ui-cycle-counts/TableCycleCounts";
+import BasicTables from "./Tables/BasicTables";
+import BasicTableOne from "../components/tables/BasicTables/BasicTableOne";
 
 export default function Warehouse() {
   const {
@@ -206,6 +208,7 @@ export default function Warehouse() {
 
             <TableCycleCounts />
 
+            <BasicTableOne />
           </div>
         )}
       </div>

@@ -31,7 +31,7 @@ const InfoTable: React.FC<InfoTableProps> = ({ title, data }) => {
     );
 };
 
-export default function FormWarehouseDetails() {
+export default function TableWarehouseDetails() {
     const details = [
         { label: "Name", value: "Bút" },
         { label: "Part Number", value: "12312" },
