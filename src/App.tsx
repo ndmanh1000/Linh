@@ -28,6 +28,7 @@ import PeoPleTeam from "./pages/PeoPleTeam";
 import Assets from "./pages/Assets";
 import AssetsTask1 from "./components/assets/AssetsTask1";
 import Requestss from "./pages/Requestss";
+import WareHouseInventoryDetails from "./components/warehouse/ui-inventory/WareHouseInventoryDetails";
 
 
 export default function App() {
@@ -56,6 +57,7 @@ export default function App() {
             <Route path="/assets" element={<Assets />} />
             <Route path="/assets-task1" element={<AssetsTask1 />} />
             <Route path="/request" element={<Requestss />} />
+            <Route path="/ware-house-inventory-details" element={<WareHouseInventoryDetails />} />
           
 
 

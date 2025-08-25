@@ -88,7 +88,7 @@ const RequestFormDetails: React.FC = () => {
       imageFiles,
       documentFiles
     };
-    
+
     console.log("Form submitted with data:", formDataWithFiles);
     // Ở đây bạn có thể gửi dữ liệu lên server
     // formDataWithFiles sẽ chứa tất cả thông tin form và files
@@ -151,7 +151,7 @@ const RequestFormDetails: React.FC = () => {
         {/* Image Upload Section */}
         <div className="space-y-2">
           <Label>Image</Label>
-          <UpFile10 
+          <UpFile10
             onFilesSelected={(files) => {
               console.log("Image files selected:", files);
               setImageFiles(files);
@@ -167,29 +167,29 @@ const RequestFormDetails: React.FC = () => {
 
         {/* Start Date and Due Date */}
         <div className=" grid grid-cols-1 md:flex md:gap-2 gap-2">
-                      <div className="w-full">
-                        <DatePicker
-                          id="date-picker"
-                          label="Date Start"
-                          placeholder="Select a date"
-                          onChange={(dates, currentDateString) => {
+          <div className="w-full">
+            <DatePicker
+              id="date-picker"
+              label="Date Start"
+              placeholder="Select a date"
+              onChange={(dates, currentDateString) => {
 
-                            console.log({ dates, currentDateString });
-                          }}
-                        />
-                      </div>
-                      <div className="w-full">
-                        <DatePicker
-                          id="date-picker"
-                          label="Due Date"
-                          placeholder="Select a date"
-                          onChange={(dates, currentDateString) => {
+                console.log({ dates, currentDateString });
+              }}
+            />
+          </div>
+          <div className="w-full">
+            <DatePicker
+              id="date-picker"
+              label="Due Date"
+              placeholder="Select a date"
+              onChange={(dates, currentDateString) => {
 
-                            console.log({ dates, currentDateString });
-                          }}
-                        />
-                      </div>
-                    </div>
+                console.log({ dates, currentDateString });
+              }}
+            />
+          </div>
+        </div>
 
         {/* Category and Asset */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -240,7 +240,7 @@ const RequestFormDetails: React.FC = () => {
         {/* Files Upload Section */}
         <div className="space-y-2">
           <Label>Files</Label>
-          <UpFile10 
+          <UpFile10
             onFilesSelected={(files) => {
               console.log("Files selected:", files);
               setDocumentFiles(files);
@@ -259,32 +259,32 @@ const RequestFormDetails: React.FC = () => {
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-gray-200">
         <div>
-        <button
-          type="button"
-          className="w-full sm:w-auto px-6 py-3 bg-[#E01E5A] text-white rounded-lg transition-colors"
-          onClick={openModalRequestDecline}
-        >
-          Decline Request
-        </button>
+          <button
+            type="button"
+            className="w-full sm:w-auto px-6 py-3 bg-[#E01E5A] text-white rounded-lg transition-colors"
+            onClick={openModalRequestDecline}
+          >
+            Decline Request
+          </button>
         </div>
-       <div className="flex items-center md:gap-2 gap-2">
-       <button
-          type="button"
-          onClick={handleFormSubmit}
-          className="w-full sm:w-auto px-6 py-3 bg-white text-black border-2 border-[#D9D9D9] rounded-lg  transition-colors hover:bg-gray-50"
-        >
-          Save Without Approving
-        </button>
+        <div className="flex items-center md:gap-2 gap-2">
+          <button
+            type="button"
+            onClick={handleFormSubmit}
+            className="w-full sm:w-auto px-6 py-3 bg-white text-black border-2 border-[#D9D9D9] rounded-lg  transition-colors hover:bg-gray-50"
+          >
+            Save Without Approving
+          </button>
 
-        <button
-          type="button"
-          className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-lg  transition-colors"
-        >
-          Approve Request
-        </button>
-       </div>
+          <button
+            type="button"
+            className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white rounded-lg  transition-colors"
+          >
+            Approve Request
+          </button>
+        </div>
 
-        
+
       </div>
       <ModalRequestDecline
         isOpen={isModalRequestDeclineOpen}

@@ -82,7 +82,7 @@ import {ReactComponent as TimerIcon2} from "./time2.svg?react";
 import {ReactComponent as SettingIcon2} from "./setting2.svg?react";
 import {ReactComponent as Edit3Icon} from "./edit-3.svg?react";
 import {ReactComponent as MinusIcon} from "./minus-cirlce.svg?react";
-
+import {ReactComponent as LayoutLineIcon} from "./layoutoutlined.svg?react";
 
 
 
@@ -90,6 +90,7 @@ import {ReactComponent as MinusIcon} from "./minus-cirlce.svg?react";
 
 
 export {
+  LayoutLineIcon,
   MinusIcon,
   Edit3Icon,
   SettingIcon2,
