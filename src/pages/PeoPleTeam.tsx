@@ -6,8 +6,7 @@ import WorkOrderTask from "../components/workorder/work-order-task/WorkOrderTask
 import { ScanIcon } from "../icons";
 import ModalQr from "../components/modal/ModalQr";
 import PeopleTeamTable from "../components/people-teams/PeopleTeamTable";
-import WarehouseTable from "../components/warehouse/WarehouseTable";
-import ModalWareHouseCreatPart from "../components/modal/ModalWareHouseCreatPart";
+
 import Checkbox from "../components/form/input/Checkbox";
 import ModalAddTeam from "../components/modal/ModalAddTeam";
 import ModalDeactive from "../components/modal/ModalDeactive";
@@ -53,22 +52,20 @@ export default function PeoPleTeam() {
             <button
               type="button"
               onClick={() => setActiveTab("people")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "people"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "people"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
               People
             </button>
             <button
               type="button"
               onClick={() => setActiveTab("teams")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "teams"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "teams"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
               Teams
             </button>

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Modal } from "../../ui/modal";
 import Label from "../../form/Label";
 import Input from "../../form/input/InputField";
@@ -6,14 +6,9 @@ import TextArea from "../../form/input/TextArea";
 import Select from "../../form/Select";
 import DatePicker from "../../form/date-picker";
 import { CiSearch } from "react-icons/ci";
-import Toggle from "../../toggle-switch/Toggle";
-import ToggleSwitch from "../../form/form-elements/ToggleSwitch";
+
 import UpFile10 from "../../upload/UpFile10";
 
-interface OptionType {
-  value: string;
-  label: string;
-}
 
 interface ModalEditWorkOrder {
   isOpen: boolean;

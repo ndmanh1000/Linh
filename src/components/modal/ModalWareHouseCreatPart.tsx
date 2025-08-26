@@ -1,11 +1,11 @@
-//
+
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
 import FormInventoryLines from "../warehouse/FormInventoryLines";
 import Input from "../form/input/InputField";
 import Toggle from "../toggle-switch/Toggle";
-//
+
 import FormVendorCustomer from "../warehouse/FormVendorCustomer";
 import { Textarea } from "flowbite-react";
 import FormPeopleTeam from "../warehouse/FormPeopleTeam";

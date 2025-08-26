@@ -5,11 +5,6 @@ import ModalQr from "../modal/ModalQr";
 
 import ModalCreateAssets from "../modal/ModalCreateAssets";
 
-const options = [
-  { value: "marketing", label: "Marketing" },
-  { value: "template", label: "Template" },
-  { value: "development", label: "Development" },
-];
 
 export default function AssetsHeader() {
 
@@ -23,7 +18,7 @@ export default function AssetsHeader() {
     openModal: openModalCreateAssets,
     closeModal: closeModalCreateAssets,
   } = useModal();
- 
+
 
   return (
     <div>
@@ -48,7 +43,7 @@ export default function AssetsHeader() {
         </div>
 
 
-      
+
       </div>
       <ModalQr isOpen={isModalQrOpen} onClose={closeModalQr} />
       <ModalCreateAssets

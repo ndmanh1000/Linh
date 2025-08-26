@@ -1,11 +1,7 @@
-import React from "react";
-import Label from "../form/Label";
+
 import { useState } from "react";
 import { Modal } from "../ui/modal";
-import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
+
 import FlTable from "../tables/FlTable";
 import { BroomIcon } from "../../icons";
 

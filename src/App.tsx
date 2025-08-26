@@ -58,7 +58,7 @@ export default function App() {
             <Route path="/assets-task1" element={<AssetsTask1 />} />
             <Route path="/request" element={<Requestss />} />
             <Route path="/ware-house-inventory-details" element={<WareHouseInventoryDetails />} />
-          
+
 
 
             {/* Tables */}

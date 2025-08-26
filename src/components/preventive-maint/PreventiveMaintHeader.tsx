@@ -1,12 +1,7 @@
 import { PlusOutlinedIcon, MoreIcon, ScanIcon } from "../../icons";
 import { Modal } from "../ui/modal";
 import { useState } from "react";
-import Label from "../form/Label";
-import Input from "../form/input/InputField";
-import Select from "../form/Select";
-import TextArea from "../form/input/TextArea";
-import { CiSearch } from "react-icons/ci";
-import DatePicker from "../form/date-picker";
+
 import { useModal } from "../../hooks/useModal";
 import ModalQr from "../modal/ModalQr";
 import { GoPlus } from "react-icons/go";
@@ -14,11 +9,7 @@ import PmTable from "../tables/PmTable";
 import ModalAddWorkOrderDetails from "../modal/ModalAddWorkOrderDetails";
 import ScheduleBox from "./ScheduleBox";
 
-const options = [
-  { value: "marketing", label: "Marketing" },
-  { value: "template", label: "Template" },
-  { value: "development", label: "Development" },
-];
+
 
 export default function PreventiveMaintHeader() {
   const { isOpen, openModal, closeModal } = useModal();

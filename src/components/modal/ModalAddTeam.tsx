@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
@@ -104,9 +104,8 @@ export default function ModalAddTeam({ isOpen, onClose }: ModalAddTeamProps) {
                             : `${selectedWorkerIds.length} selected`}
                         </span>
                         <svg
-                          className={`w-4 h-4 text-gray-500 transition-transform ${
-                            isWorkersOpen ? "rotate-180" : "rotate-0"
-                          }`}
+                          className={`w-4 h-4 text-gray-500 transition-transform ${isWorkersOpen ? "rotate-180" : "rotate-0"
+                            }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"

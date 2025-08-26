@@ -1,15 +1,9 @@
-import React from "react";
-import Label from "../form/Label";
+
 import { Modal } from "../ui/modal";
-import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
-import { FaSearch } from "react-icons/fa";
-import BasicTableOne from "../tables/BasicTables/BasicTableOne";
-import FlTable from "../tables/FlTable";
+
+
 import PmTable from "../tables/PmTable";
-import { useModal } from "../../hooks/useModal";
+
 import { useState } from "react";
 import { GoPlus } from "react-icons/go";
 import ScheduleBox from "../preventive-maint/ScheduleBox";
@@ -20,11 +14,7 @@ interface ModalAddAssetProps {
 }
 
 export default function ModalAddAsset({ isOpen, onClose }: ModalAddAssetProps) {
-  const {
-    isOpen: isModalAddWorkOrderDetailsOpen,
-    openModal: openModalAddWorkOrderDetails,
-    closeModal: closeModalAddWorkOrderDetails,
-  } = useModal();
+
   const [showScheduleBox, setShowScheduleBox] = useState(false);
 
   return (
@@ -59,7 +49,7 @@ export default function ModalAddAsset({ isOpen, onClose }: ModalAddAssetProps) {
                     <button
                       className="w-full rounded-[8px] border border-[#D9D9D9] bg-white"
                       type="button"
-                      onClick={openModalAddWorkOrderDetails}
+
                     >
                       Select existing schedule
                     </button>

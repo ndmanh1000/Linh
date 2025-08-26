@@ -1,4 +1,4 @@
-import React from "react";
+
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
@@ -15,7 +15,7 @@ interface ModalCreateRequestProps {
 }
 
 export default function ModalCreateRequest({ isOpen, onClose }: ModalCreateRequestProps) {
- 
+
 
   const handleSelectChange12 = (value: string) => {
     console.log("Selected value:", value);
@@ -26,7 +26,7 @@ export default function ModalCreateRequest({ isOpen, onClose }: ModalCreateReque
       <div className="no-scrollbar relative w-full max-w-[900px] overflow-y-auto rounded-3xl bg-white p-4 dark:bg-gray-900 lg:p-11">
         <div className="px-2 pr-14">
           <h4 className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white/90">
-          Create Request
+            Create Request
           </h4>
         </div>
         <div className="w-full border-b border-[#F3F3F3]" />
@@ -98,7 +98,7 @@ export default function ModalCreateRequest({ isOpen, onClose }: ModalCreateReque
                 type="button"
                 className="border border-gray-300 bg-white flex items-center justify-center px-2 py-2 rounded-[4px]"
               >
-               Submit Request
+                Submit Request
               </button>
             </div>
           </div>

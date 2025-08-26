@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 type Vendor = {

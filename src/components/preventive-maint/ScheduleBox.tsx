@@ -4,7 +4,7 @@ import ModalCalendar from "../modal/ModalCalendar";
 import { CalenderIcon1, TimerIcon2, SettingIcon2 } from "../../icons";
 import ModalMeterSchedule from "../modal/ModalMeterSchedule";
 import ModalCalendarQr from "../modal/ModalCalendarQr";
-import React from "react";
+
 
 interface ScheduleBoxProps {
   closeBox?: () => void;

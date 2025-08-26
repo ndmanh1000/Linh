@@ -119,9 +119,8 @@ const AssetsTable: React.FC = () => {
             return (
               <tr
                 key={row.id}
-                className={`border-t hover:bg-gray-100 cursor-pointer ${
-                  isSelected ? "bg-blue-50" : ""
-                }`}
+                className={`border-t hover:bg-gray-100 cursor-pointer ${isSelected ? "bg-blue-50" : ""
+                  }`}
                 onClick={() => navigate("/assets-task1")}
               >
                 <td className="p-3">

@@ -1,16 +1,9 @@
-import React from "react";
-import Label from "../form/Label";
+
 import { Modal } from "../ui/modal";
-import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
+
 import TextArea from "../form/input/TextArea";
 
-interface OptionType {
-  value: string;
-  label: string;
-}
+
 
 interface ModalRequestDeclineProps {
   isOpen: boolean;
@@ -34,8 +27,8 @@ export default function ModalRequestDecline({
         <form className="flex flex-col">
           <div className="custom-scrollbar overflow-y-auto px-2 pb-3">
             <div className="mt-7">
-            <div>Enter a reason(optional)</div>
-            <TextArea/>
+              <div>Enter a reason(optional)</div>
+              <TextArea />
             </div>
 
             <div className="w-full flex items-center justify-end gap-2 md:gap-4 md:mt-3 mt-3">
@@ -50,7 +43,7 @@ export default function ModalRequestDecline({
                 type="button"
                 className="border border-[#E01E5A] bg-[#E01E5A] flex items-center text-white justify-center px-2 py-2 rounded-[4px]"
               >
-               Decline
+                Decline
               </button>
             </div>
           </div>

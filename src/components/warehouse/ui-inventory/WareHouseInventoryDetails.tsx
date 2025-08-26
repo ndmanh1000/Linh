@@ -13,20 +13,7 @@ import TableWarehouseAdjust from "../ui-adjustments/TableWarehouseAdjust";
 
 
 export default function WareHouseInventoryDetails() {
-  interface Option {
-    value: string;
-    label: string;
-  }
 
-  const teamOptions: Option[] = [
-    { value: "vendor1", label: "Vendor A" },
-    { value: "vendor2", label: "Vendor B" },
-    { value: "vendor3", label: "Vendor C" },
-  ];
-
-  const handleSelectChange = (value: string) => {
-    console.log("Selected value:", value);
-  };
   const [activeTab, setActiveTab] = useState("WareHouseInventoryDetails");
   const navigate = useNavigate();
   return (

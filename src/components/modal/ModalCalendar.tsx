@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";

@@ -5,12 +5,6 @@ import ModalQr from "../modal/ModalQr";
 import ModalCreateRequest from "../modal/ModalCreateRequest";
 
 
-const options = [
-  { value: "marketing", label: "Marketing" },
-  { value: "template", label: "Template" },
-  { value: "development", label: "Development" },
-];
-
 export default function RequestHeader() {
 
   const {
@@ -23,7 +17,7 @@ export default function RequestHeader() {
     openModal: openModalCreateRequest,
     closeModal: closeModalCreateRequest,
   } = useModal();
- 
+
 
   return (
     <div>
@@ -48,7 +42,7 @@ export default function RequestHeader() {
         </div>
 
 
-      
+
       </div>
       <ModalQr isOpen={isModalQrOpen} onClose={closeModalQr} />
       <ModalCreateRequest

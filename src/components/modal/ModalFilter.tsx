@@ -1,14 +1,8 @@
-import React from "react";
+
 import { useState } from "react";
-import Label from "../form/Label";
+
 import { Modal } from "../ui/modal";
-import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
-import { FaSearch } from "react-icons/fa";
-import BasicTableOne from "../tables/BasicTables/BasicTableOne";
-import FlTable from "../tables/FlTable";
+
 import MultiSelect from "../form/MultiSelect";
 import { CiTrash } from "react-icons/ci";
 import { FiPlus } from "react-icons/fi";

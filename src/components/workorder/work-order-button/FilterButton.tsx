@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal } from "../../ui/modal";
+
+
 import ModalFilter from "../../modal/ModalFilter";
 import { useModal } from "../../../hooks/useModal";
 

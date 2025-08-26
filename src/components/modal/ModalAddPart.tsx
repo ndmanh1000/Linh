@@ -1,12 +1,8 @@
-import React from "react";
-import Label from "../form/Label";
+
 import { Modal } from "../ui/modal";
-import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
+
 import { FaSearch } from "react-icons/fa";
-import BasicTableOne from "../tables/BasicTables/BasicTableOne";
+
 import FlTable from "../tables/FlTable";
 
 interface ModalAddPartProps {

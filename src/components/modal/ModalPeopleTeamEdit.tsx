@@ -1,11 +1,10 @@
-import React from "react";
+
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
+
 import Input from "../form/input/InputField";
-import TextArea from "../form/input/TextArea";
+
 
 interface OptionType {
   value: string;

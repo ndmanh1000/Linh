@@ -1,4 +1,4 @@
-import React from "react";
+
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
@@ -75,7 +75,7 @@ export default function ModalAddTime({ isOpen, onClose }: ModalAddTimeProps) {
               </div>
 
               <div className="w-full grid grid-cols-1 md:flex md:gap-2 gap-2 md:mt-3 mt-3">
-                <div className="md:w-3/4 w-full">
+                <div className="md:w-1/2 w-full">
                   <DatePicker
                     id="date-picker"
                     label="Work Started at"
@@ -88,7 +88,7 @@ export default function ModalAddTime({ isOpen, onClose }: ModalAddTimeProps) {
                     }}
                   />
                 </div>
-                <div>
+                <div className="md:w-1/2 w-full">
                   <Label>Duration</Label>
                   <div className="grid grid-cols-1 md:flex md:gap-2 gap-2 w-full">
                     <div className="w-full">

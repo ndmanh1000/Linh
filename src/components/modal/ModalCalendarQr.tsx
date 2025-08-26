@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Label from "../form/Label";
 import { Modal } from "../ui/modal";
 import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
+
 import Input from "../form/input/InputField";
 import { TimeIcon } from "../../icons";
 import Checkbox from "../form/input/Checkbox";
@@ -35,15 +34,6 @@ export default function ModalCalendarQr({
     console.log("Selected value:", value);
   };
 
-  const options11: Option[] = [
-    { value: "tranlinh", label: "Trần Linh" },
-    { value: "template", label: "A" },
-    { value: "development", label: "B" },
-  ];
-
-  const handleSelectChange11 = (value: string) => {
-    console.log("Selected value:", value);
-  };
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} className="max-w-[900px] m-4">

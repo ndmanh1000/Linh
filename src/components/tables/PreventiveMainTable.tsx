@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaImage } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
@@ -112,9 +112,8 @@ export default function PreventiveMainTable() {
             return (
               <tr
                 key={idx}
-                className={`border-t hover:bg-gray-50 ${
-                  isSelected ? "bg-blue-50" : ""
-                }`}
+                className={`border-t hover:bg-gray-50 ${isSelected ? "bg-blue-50" : ""
+                  }`}
               >
                 <td className="p-3">
                   <input

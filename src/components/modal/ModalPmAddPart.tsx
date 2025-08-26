@@ -1,18 +1,11 @@
-import React from "react";
+
 import { useState } from "react";
-import Label from "../form/Label";
+
 import { Modal } from "../ui/modal";
-import Select from "../form/Select";
-import { DolaIcon } from "../../icons";
-import DatePicker from "../form/date-picker";
-import Input from "../form/input/InputField";
+
 import FlTable from "../tables/FlTable";
 import { FaSearch } from "react-icons/fa";
 
-interface Option {
-  value: string;
-  label: string;
-}
 
 interface ModalPmAddPartProps {
   isOpen: boolean;
@@ -23,25 +16,7 @@ export default function ModalPmAddPart({
   isOpen,
   onClose,
 }: ModalPmAddPartProps) {
-  const options10: Option[] = [
-    { value: "tranlinh", label: "Trần Linh" },
-    { value: "template", label: "A" },
-    { value: "development", label: "B" },
-  ];
 
-  const handleSelectChange10 = (value: string) => {
-    console.log("Selected value:", value);
-  };
-
-  const options11: Option[] = [
-    { value: "tranlinh", label: "Trần Linh" },
-    { value: "template", label: "A" },
-    { value: "development", label: "B" },
-  ];
-
-  const handleSelectChange11 = (value: string) => {
-    console.log("Selected value:", value);
-  };
   const [activeTab, setActiveTab] = useState("start");
 
   return (

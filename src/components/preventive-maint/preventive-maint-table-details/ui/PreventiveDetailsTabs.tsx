@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AssetLocation from "./AssetLocationTable";
+
 import { GridColumnIcon } from "../../../../icons";
 import FilterButton from "../../../workorder/work-order-button/FilterButton";
 import LocationButton from "../../../workorder/work-order-button/LocationButton";

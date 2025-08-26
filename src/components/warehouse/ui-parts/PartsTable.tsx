@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaImage } from "react-icons/fa";
 import { useNavigate } from "react-router";
 

@@ -3,11 +3,9 @@ import {
   AccordionContent,
   AccordionPanel,
   AccordionTitle,
-  Textarea,
+
 } from "flowbite-react";
-import Select from "../form/Select";
-import Label from "../form/Label";
-import TextArea from "../form/input/TextArea";
+
 
 export default function FormCustomData() {
   return (
