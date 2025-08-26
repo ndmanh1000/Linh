@@ -19,7 +19,6 @@ export default function FormInventoryLines() {
 
   return (
     <div className="w-full border border-[#f0f0f0] rounded-xl p-4 bg-white ">
-
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <h2 className="text-sm font-medium">Inventory Lines</h2>
@@ -29,7 +28,6 @@ export default function FormInventoryLines() {
           Show Inventory Settings
         </button>
       </div>
-
 
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm border border-[#f0f0f0] border-collapse">
@@ -96,7 +94,6 @@ export default function FormInventoryLines() {
           </tbody>
         </table>
       </div>
-
 
       <div className="mt-3">
         <button

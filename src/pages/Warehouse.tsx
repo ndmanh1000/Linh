@@ -208,7 +208,7 @@ export default function Warehouse() {
 
             <TableCycleCounts />
 
-            <BasicTableOne />
+
           </div>
         )}
       </div>
