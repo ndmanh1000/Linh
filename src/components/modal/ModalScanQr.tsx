@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import jsQR from "jsQR";
+import jsQR from "jsqr";
 import { Modal } from "../ui/modal";
 
 interface ModalScanQrProps {

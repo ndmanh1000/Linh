@@ -1,4 +1,4 @@
-declare module 'jsQR' {
+declare module 'jsqr' {
     interface QRCode {
         data: string;
         location: {
@@ -18,5 +18,5 @@ declare module 'jsQR' {
         }
     ): QRCode | null;
 
-    export default jsQR;
+    export = jsQR;
 }
