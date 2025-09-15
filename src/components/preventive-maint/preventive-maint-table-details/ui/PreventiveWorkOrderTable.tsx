@@ -1,4 +1,4 @@
-import React from "react";
+
 
 interface WorkOrder {
   id: string;
@@ -86,9 +86,8 @@ export default function PreventiveWorkOrderTable() {
               <td className="p-3">{row.dueDate}</td>
               <td className="p-3">
                 <span
-                  className={`${
-                    statusColors[row.status]
-                  } flex items-center gap-1`}
+                  className={`${statusColors[row.status]
+                    } flex items-center gap-1`}
                 >
                   {row.status === "Open" && "○"}
                   {row.status === "In Progress" && "🟢"}
@@ -98,9 +97,8 @@ export default function PreventiveWorkOrderTable() {
               </td>
               <td className="p-3">
                 <span
-                  className={`px-2 py-1 rounded text-xs font-medium ${
-                    priorityColors[row.priority]
-                  }`}
+                  className={`px-2 py-1 rounded text-xs font-medium ${priorityColors[row.priority]
+                    }`}
                 >
                   {row.priority}
                 </span>

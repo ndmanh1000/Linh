@@ -55,14 +55,7 @@ export default function ModalEditWorkOrder({
   const handleSelectChange7 = (value: string) => {
     console.log("Selected value:", value);
   };
-  const handleSelectChange8 = (value: string) => {
-    console.log("Selected value:", value);
-  };
-  const options8 = [
-    { value: "marketing", label: "Marketing" },
-    { value: "template", label: "Template" },
-    { value: "development", label: "Development" },
-  ];
+
   const options7 = [
     { value: "marketing", label: "Marketing" },
     { value: "template", label: "Template" },

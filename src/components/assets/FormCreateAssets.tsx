@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Label from "../form/Label";
 import Input from "../form/input/InputField";
 import TextArea from "../form/input/TextArea";
@@ -44,13 +44,13 @@ export default function FormCreateAssets() {
         {/* Asset Information - First Section */}
         <div className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-800">Asset Information</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <Label>Name*</Label>
               <Input placeholder="Enter asset name" />
             </div>
-            
+
             <div>
               <Label>Model</Label>
               <Input placeholder="Enter model" />
@@ -59,8 +59,8 @@ export default function FormCreateAssets() {
 
           <div>
             <Label>Description</Label>
-            <TextArea 
-              placeholder="Enter description" 
+            <TextArea
+              placeholder="Enter description"
               rows={4}
               className="resize-none"
             />
@@ -71,7 +71,7 @@ export default function FormCreateAssets() {
               <Label>Manufacturer</Label>
               <Input placeholder="Enter manufacturer" />
             </div>
-            
+
             <div>
               <Label>Serial Number</Label>
               <Input placeholder="Enter serial number" />
@@ -83,7 +83,7 @@ export default function FormCreateAssets() {
               <Label>Category</Label>
               <Input placeholder="Enter category" />
             </div>
-            
+
             <div>
               <Label>Area</Label>
               <Input placeholder="Enter area" />
@@ -104,11 +104,11 @@ export default function FormCreateAssets() {
                 label="Generate random barcode"
               />
             </div>
-            
+
             {barcodeOption === "custom" && (
               <div>
                 <Label>Barcode</Label>
-                <Input 
+                <Input
                   placeholder="Enter custom barcode"
                   value={customBarcode}
                   onChange={(e) => setCustomBarcode(e.target.value)}
@@ -126,7 +126,7 @@ export default function FormCreateAssets() {
         {/* Asset Information - Second Section */}
         <div className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-800">Asset Information</h2>
-          
+
           <div>
             <Label>Team</Label>
             <Select
@@ -141,7 +141,7 @@ export default function FormCreateAssets() {
         {/* More Information */}
         <div className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-800">More Information</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <Label>Customers</Label>
@@ -152,7 +152,7 @@ export default function FormCreateAssets() {
                 className="w-full"
               />
             </div>
-            
+
             <div>
               <Label>Vendor</Label>
               <Select
@@ -176,7 +176,7 @@ export default function FormCreateAssets() {
               Add Parts
             </button>
           </div>
-          
+
           <div className="w-full bg-[#C3BEBE14] h-[200px] flex items-center justify-center rounded-[4px]">
             <p className="text-gray-500">No line items have been added yet</p>
           </div>
@@ -185,7 +185,7 @@ export default function FormCreateAssets() {
         {/* Files Section */}
         <div className="space-y-6">
           <h2 className="text-xl font-semibold text-gray-800">Files</h2>
-          
+
           <div>
             <UpFile10 />
           </div>
