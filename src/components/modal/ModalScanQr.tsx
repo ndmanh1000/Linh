@@ -81,8 +81,8 @@ export default function ModalScanQr({ isOpen, onClose, onScanSuccess }: ModalSca
         <Modal isOpen={isOpen} onClose={onClose} className="max-w-[900px] m-4">
             <div className="no-scrollbar relative w-full max-w-[900px] overflow-y-auto rounded-3xl bg-gray-200 p-4 dark:bg-gray-900 lg:p-11">
                 <div className="px-2 pr-14">
-                    <h4 className="mb-2 text-2xl font-semibold text-white/90">
-                        Quét mã QR từ ảnh 📁
+                    <h4 className="mb-2 text-2xl font-semibold text-gray-800 ">
+                        Quét mã QR từ ảnh- Camera
                     </h4>
                 </div>
                 <div className="w-full border-b border-gray-700" />
@@ -106,7 +106,7 @@ export default function ModalScanQr({ isOpen, onClose, onScanSuccess }: ModalSca
                                 <>
 
                                     <span className="absolute text-gray-300 text-lg font-medium group-hover:text-blue-400 transition-colors">
-                                        Nhấn để chọn ảnh
+                                        Nhấn để chọn
                                     </span>
                                     {/* 4 góc vuông màu trắng */}
                                     <div className="absolute inset-0">

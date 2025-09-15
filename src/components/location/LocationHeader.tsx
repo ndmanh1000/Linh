@@ -71,6 +71,10 @@ export default function LocationHeader() {
                 onScanSuccess={(result) => {
                     console.log('QR Scan result:', result);
                     closeModalScanQr();
+                    // Mở ModalQr sau khi quét QR thành công
+                    setTimeout(() => {
+                        openModalQr();
+                    }, 100);
                 }}
             />
         </div>

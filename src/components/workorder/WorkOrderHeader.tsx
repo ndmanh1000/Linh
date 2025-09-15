@@ -82,6 +82,7 @@ export default function WorkOrderHeader() {
   const { isOpen, openModal, closeModal } = useModal();
   const {
     isOpen: isModalQrOpen,
+    openModal: openModalQr,
     closeModal: closeModalQr,
   } = useModal();
   const {
@@ -417,6 +418,10 @@ export default function WorkOrderHeader() {
         onScanSuccess={(result) => {
           console.log('QR Scan result:', result);
           closeModalScanQr();
+          // Mở ModalQr sau khi quét QR thành công
+          setTimeout(() => {
+            openModalQr();
+          }, 100);
         }}
       />
     </div>
