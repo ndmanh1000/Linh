@@ -28,7 +28,7 @@ export default function AssetsHeader() {
   return (
     <div>
       <div className="w-full flex items-center justify-between">
-        <div>Preventive Maintenance</div>
+        <div>Assets</div>
         <div className="flex items-center md:gap-10 gap-5">
 
           <button

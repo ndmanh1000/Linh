@@ -17,28 +17,26 @@ export default function VerdorsCustomers() {
     <div className="w-full flex flex-col md:gap-4 gap-3">
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center md:gap-3 gap-3">
-          <div>Vendors</div>
+
           <div>
             {" "}
             <button
               type="button"
               onClick={() => setActiveTab("vendors")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "vendors"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "vendors"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
               Vendors
             </button>
             <button
               type="button"
               onClick={() => setActiveTab("customers")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "customers"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "customers"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
               Customers
             </button>

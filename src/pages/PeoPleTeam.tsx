@@ -50,7 +50,7 @@ export default function PeoPleTeam() {
     <div className="w-full flex flex-col md:gap-4 gap-3">
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center md:gap-3 gap-3">
-          <div>Inventory</div>
+
           <div>
             {" "}
             <button

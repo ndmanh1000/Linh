@@ -23,22 +23,20 @@ export default function CheckList() {
             <button
               type="button"
               onClick={() => setActiveTab("yourchecklists")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "yourchecklists"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "yourchecklists"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
               Your Checklists
             </button>
             <button
               type="button"
               onClick={() => setActiveTab("templatelibrary")}
-              className={`px-4 py-2 text-sm font-medium ${
-                activeTab === "templatelibrary"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
+              className={`px-4 py-2 text-sm font-medium ${activeTab === "templatelibrary"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-500 hover:text-gray-700"
+                }`}
             >
               Template Library
             </button>
