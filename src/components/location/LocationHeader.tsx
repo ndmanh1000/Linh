@@ -17,9 +17,9 @@ export default function LocationHeader() {
     } = useModal();
     const {
         isOpen: isModalCreateAssetsOpen,
-        openModal: openModalCreateAssets,
         closeModal: closeModalCreateAssets,
     } = useModal();
+
     const {
         isOpen: isModalCreateLocationOpen,
         openModal: openModalCreateLocation,

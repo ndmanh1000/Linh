@@ -138,7 +138,7 @@ const PmTable: React.FC = () => {
                   <DatePicker
                     id={`start-date-${row.id}`}
                     placeholder="Select start date"
-                    onChange={(dates, currentDateString) => {
+                    onChange={(_, currentDateString) => {
                       handleChange(row.id, "startDate", currentDateString);
                     }}
                   />
@@ -149,7 +149,7 @@ const PmTable: React.FC = () => {
                 <DatePicker
                   id={`end-date-${row.id}`}
                   placeholder="Select end date"
-                  onChange={(dates, currentDateString) => {
+                  onChange={(_, currentDateString) => {
                     handleChange(row.id, "endDate", currentDateString);
                   }}
                 />
