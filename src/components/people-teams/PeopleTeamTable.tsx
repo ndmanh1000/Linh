@@ -1,6 +1,6 @@
-import { useState } from "react";
 import ModalPeopleDetails from "../modal/ModalPeopleDetails";
 import { useModal } from "../../hooks/useModal";
+import DataTable, { TableColumn, StatusConfig } from "../common/DataTable";
 
 interface User {
   id: number;
@@ -20,7 +20,6 @@ export default function PeopleTeamTable() {
     openModal: openModalPeopleDetails,
     closeModal: closeModalPeopleDetails,
   } = useModal();
-  const [selectedRows, setSelectedRows] = useState<number[]>([]);
 
   const data: User[] = [
     {
@@ -36,86 +35,75 @@ export default function PeopleTeamTable() {
     },
   ];
 
-  const toggleRow = (id: number) => {
-    if (selectedRows.includes(id)) {
-      setSelectedRows(selectedRows.filter((rowId) => rowId !== id));
-    } else {
-      setSelectedRows([...selectedRows, id]);
-    }
-  };
+  const columns: TableColumn[] = [
+    {
+      key: "name",
+      label: "Name",
+      render: (value: string) => (
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">
+            {value.charAt(0)}
+          </div>
+          {value}
+        </div>
+      ),
+    },
+    {
+      key: "status",
+      label: "Status",
+    },
+    {
+      key: "accountType",
+      label: "Account Type",
+    },
+    {
+      key: "email",
+      label: "Email",
+      render: (value: string) => (
+        <span className="truncate max-w-[180px]">{value}</span>
+      ),
+    },
+    {
+      key: "phone",
+      label: "Phone Number",
+    },
+    {
+      key: "jobTitle",
+      label: "Job Title",
+    },
+    {
+      key: "hourlyRate",
+      label: "Hourly Rate",
+    },
+    {
+      key: "company",
+      label: "Company Name",
+    },
+  ];
 
-  const toggleAll = () => {
-    if (selectedRows.length === data.length) {
-      setSelectedRows([]);
-    } else {
-      setSelectedRows(data.map((item) => item.id));
-    }
+  const statusConfig: StatusConfig = {
+    Active: {
+      text: "Active",
+      color: "success",
+      bgColor: "bg-green-100",
+      textColor: "text-green-700",
+    },
   };
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200">
-      <table className="w-full text-left text-sm">
-        <thead className="bg-gray-50 text-gray-700">
-          <tr>
-            <th className="px-4 py-2">
-              <input
-                type="checkbox"
-                checked={selectedRows.length === data.length}
-                onChange={toggleAll}
-                onClick={(e) => e.stopPropagation()} // chặn lan click
-              />
-            </th>
-            <th className="px-4 py-2">Name</th>
-            <th className="px-4 py-2">Status</th>
-            <th className="px-4 py-2">Account Type</th>
-            <th className="px-4 py-2">Email</th>
-            <th className="px-4 py-2">Phone Number</th>
-            <th className="px-4 py-2">Job Title</th>
-            <th className="px-4 py-2">Hourly Rate</th>
-            <th className="px-4 py-2">Company Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((user) => (
-            <tr
-              key={user.id}
-              className={`border-t cursor-pointer ${selectedRows.includes(user.id) ? "bg-green-50" : "bg-white"
-                }`}
-              onClick={openModalPeopleDetails}
-            >
-              <td className="px-4 py-2">
-                <input
-                  type="checkbox"
-                  checked={selectedRows.includes(user.id)}
-                  onChange={() => toggleRow(user.id)}
-                  onClick={(e) => e.stopPropagation()}
-                />
-              </td>
-              <td className="px-4 py-2 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">
-                  {user.name.charAt(0)}
-                </div>
-                {user.name}
-              </td>
-              <td className="px-4 py-2">
-                <span className="px-2 py-1 text-xs rounded-md bg-green-100 text-green-700 font-medium">
-                  {user.status}
-                </span>
-              </td>
-              <td className="px-4 py-2">{user.accountType}</td>
-              <td className="px-4 py-2 truncate max-w-[180px]">{user.email}</td>
-              <td className="px-4 py-2">{user.phone}</td>
-              <td className="px-4 py-2">{user.jobTitle}</td>
-              <td className="px-4 py-2">{user.hourlyRate}</td>
-              <td className="px-4 py-2">{user.company}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <>
+      <DataTable
+        data={data}
+        columns={columns}
+        statusConfig={statusConfig}
+        selectable={true}
+        onRowClick={openModalPeopleDetails}
+        className="overflow-x-auto rounded-lg border border-gray-200"
+      />
       <ModalPeopleDetails
         isOpen={isModalPeopleDetailsOpen}
         onClose={closeModalPeopleDetails}
       />
-    </div>
+    </>
   );
 }

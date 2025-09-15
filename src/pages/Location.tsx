@@ -6,6 +6,7 @@ import LocationButton from "../components/workorder/work-order-button/LocationBu
 
 import LocationHeader from "../components/location/LocationHeader";
 import LocationTable from "../components/location/LocationTable";
+import BasicTableOne from "../components/tables/BasicTables/BasicTableOne";
 
 export default function Location() {
     return (
@@ -28,6 +29,7 @@ export default function Location() {
             <div>
                 <LocationTable />
             </div>
+
         </div>
     );
 }

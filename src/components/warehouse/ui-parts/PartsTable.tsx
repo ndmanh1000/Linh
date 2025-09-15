@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { FaImage } from "react-icons/fa";
 import { useNavigate } from "react-router";
+import DataTable, { TableColumn, StatusConfig } from "../../common/DataTable";
 
 interface Product {
     id: number;
@@ -18,8 +18,6 @@ interface Product {
 
 export default function PartsTable() {
     const navigate = useNavigate();
-    const [selectedRows, setSelectedRows] = useState<number[]>([]);
-    const [selectAll, setSelectAll] = useState(false);
 
     const data: Product[] = [
         {
@@ -50,105 +48,96 @@ export default function PartsTable() {
         },
     ];
 
-    // Toggle chọn từng dòng
-    const toggleRow = (id: number) => {
-        setSelectedRows((prev) =>
-            prev.includes(id) ? prev.filter((rowId) => rowId !== id) : [...prev, id]
-        );
+    const columns: TableColumn[] = [
+        {
+            key: "name",
+            label: "Name",
+        },
+        {
+            key: "image",
+            label: "Image",
+            render: () => (
+                <div className="w-8 h-8 flex items-center justify-center rounded bg-gray-200">
+                    <FaImage className="text-gray-500" />
+                </div>
+            ),
+        },
+        {
+            key: "status",
+            label: "Status",
+            render: (value: Product["status"]) => (
+                <span className={`px-2 py-1 rounded ${value.bg} ${value.color} text-sm`}>
+                    {value.text}
+                </span>
+            ),
+        },
+        {
+            key: "qty",
+            label: "Available Qty",
+            render: (value: number, row: Product) => (
+                <span className={`font-medium ${row.qtyColor}`}>
+                    {value.toFixed(2)}
+                </span>
+            ),
+        },
+        {
+            key: "inventoryLines",
+            label: "Inventory Lines",
+        },
+        {
+            key: "barcode",
+            label: "Barcode",
+        },
+        {
+            key: "tag",
+            label: "Tag",
+            render: (value: Product["tag"]) => (
+                <span className={`px-2 py-1 rounded ${value.bg} ${value.color} text-sm`}>
+                    {value.text}
+                </span>
+            ),
+        },
+        {
+            key: "cost",
+            label: "Cost",
+        },
+        {
+            key: "category",
+            label: "Category",
+        },
+        {
+            key: "description",
+            label: "Description",
+        },
+    ];
+
+    const statusConfig: StatusConfig = {
+        "Out of stock": {
+            text: "Out of stock",
+            color: "error",
+            bgColor: "bg-red-100",
+            textColor: "text-red-600",
+        },
+        "Non-stock": {
+            text: "Non-stock",
+            color: "info",
+            bgColor: "bg-gray-100",
+            textColor: "text-gray-700",
+        },
     };
 
-    // Toggle chọn tất cả
-    const toggleSelectAll = () => {
-        if (selectAll) {
-            setSelectedRows([]);
-        } else {
-            setSelectedRows(data.map((d) => d.id));
-        }
-        setSelectAll(!selectAll);
+    const handleRowClick = () => {
+        navigate("/ware-house-inventory-details");
     };
 
     return (
-        <div className=" overflow-x-auto">
-            <table className="min-w-full border-collapse rounded-xl shadow whitespace-nowrap border border-[#F3F3F3]">
-                <thead>
-                    <tr className=" text-left">
-                        <th className="px-4 py-2">
-                            <input
-                                type="checkbox"
-                                checked={selectAll}
-                                onChange={toggleSelectAll}
-                            />
-                        </th>
-                        <th className="px-4 py-2 text-gray-500">Name</th>
-                        <th className="px-4 py-2 text-gray-500">Image</th>
-                        <th className="px-4 py-2 text-gray-500">Status</th>
-                        <th className="px-4 py-2 text-gray-500">Available Qty</th>
-                        <th className="px-4 py-2 text-gray-500">Inventory Lines</th>
-                        <th className="px-4 py-2 text-gray-500">Barcode</th>
-                        <th className="px-4 py-2 text-gray-500">Tag</th>
-                        <th className="px-4 py-2 text-gray-500">Cost</th>
-                        <th className="px-4 py-2 text-gray-500">Category</th>
-                        <th className="px-4 py-2 text-gray-500">Description</th>
-                    </tr>
-                </thead>
-                <tbody className="bg-white">
-                    {data.map((row) => {
-                        const isSelected = selectedRows.includes(row.id);
-                        return (
-                            <tr
-                                key={row.id}
-                                className={`border-t cursor-pointer ${isSelected ? "bg-blue-50" : "hover:bg-gray-50"
-                                    }`}
-                                onClick={() => navigate("/ware-house-inventory-details")}
-                            >
-                                {/* Checkbox riêng */}
-                                <td
-                                    className="px-4 py-2"
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        toggleRow(row.id);
-                                    }}
-                                >
-                                    <input
-                                        type="checkbox"
-                                        checked={isSelected}
-                                        onChange={() => toggleRow(row.id)}
-                                    />
-                                </td>
-
-                                <td className="px-4 py-2">{row.name}</td>
-                                <td className="px-4 py-2">
-                                    <div className="w-8 h-8 flex items-center justify-center rounded bg-gray-200">
-                                        <FaImage className="text-gray-500" />
-                                    </div>
-                                </td>
-                                <td className="px-4 py-2">
-                                    <span
-                                        className={`px-2 py-1 rounded ${row.status.bg} ${row.status.color} text-sm`}
-                                    >
-                                        {row.status.text}
-                                    </span>
-                                </td>
-                                <td className={`px-4 py-2 font-medium ${row.qtyColor}`}>
-                                    {row.qty.toFixed(2)}
-                                </td>
-                                <td className="px-4 py-2">{row.inventoryLines}</td>
-                                <td className="px-4 py-2">{row.barcode}</td>
-                                <td className="px-4 py-2">
-                                    <span
-                                        className={`px-2 py-1 rounded ${row.tag.bg} ${row.tag.color} text-sm`}
-                                    >
-                                        {row.tag.text}
-                                    </span>
-                                </td>
-                                <td className="px-4 py-2">{row.cost}</td>
-                                <td className="px-4 py-2">{row.category}</td>
-                                <td className="px-4 py-2">{row.description}</td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
+        <DataTable
+            data={data}
+            columns={columns}
+            statusConfig={statusConfig}
+            selectable={true}
+            onRowClick={handleRowClick}
+            className="overflow-x-auto"
+        />
     );
 }

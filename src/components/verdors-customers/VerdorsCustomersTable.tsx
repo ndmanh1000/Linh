@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
+import DataTable, { TableColumn } from "../common/DataTable";
 
 type Vendor = {
   id: number;
@@ -54,23 +55,9 @@ const vendors: Vendor[] = [
 ];
 
 export default function VerdorsCustomersTable() {
-  const [selectedIds, setSelectedIds] = useState<number[]>([]);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
 
-  const isAllSelected = selectedIds.length === vendors.length;
-
-  const toggleSelectAll = () => {
-    setSelectedIds(isAllSelected ? [] : vendors.map((v) => v.id));
-  };
-
-  const toggleRow = (id: number) => {
-    setSelectedIds((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
-  };
-
   const setSort = (dir: "asc" | "desc") => {
-
     setSortOrder((cur) => (cur === dir ? null : dir));
   };
 
@@ -85,129 +72,101 @@ export default function VerdorsCustomersTable() {
     return arr;
   }, [sortOrder]);
 
+  const columns: TableColumn[] = [
+    {
+      key: "name",
+      label: "Name",
+    },
+    {
+      key: "address",
+      label: "Address",
+    },
+    {
+      key: "phone",
+      label: "Phone Number",
+    },
+    {
+      key: "contact",
+      label: "Contact",
+    },
+    {
+      key: "email",
+      label: "Email",
+    },
+    {
+      key: "vendorType",
+      label: "Vendor Type",
+    },
+    {
+      key: "website",
+      label: "Website",
+      render: (value: string) => (
+        <span className="text-blue-500 underline">
+          {value === "N/A" ? (
+            "N/A"
+          ) : (
+            <a
+              href={value}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {value}
+            </a>
+          )}
+        </span>
+      ),
+    },
+    {
+      key: "dateCreate",
+      label: "Date Create",
+      render: (value: string) => (
+        <div className="flex items-center gap-2">
+          <span>{new Date(value).toLocaleDateString("en-US")}</span>
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setSort("asc")}
+              className={`p-1 rounded hover:bg-gray-100 transition
+                ${sortOrder === "asc"
+                  ? "text-gray-900"
+                  : "text-gray-400"
+                }`}
+              aria-pressed={sortOrder === "asc"}
+              title="Sort ascending"
+            >
+              <FaArrowUp />
+            </button>
+            <button
+              type="button"
+              onClick={() => setSort("desc")}
+              className={`p-1 rounded hover:bg-gray-100 transition
+                ${sortOrder === "desc"
+                  ? "text-gray-900"
+                  : "text-gray-400"
+                }`}
+              aria-pressed={sortOrder === "desc"}
+              title="Sort descending"
+            >
+              <FaArrowDown />
+            </button>
+          </div>
+        </div>
+      ),
+    },
+    {
+      key: "hourlyRate",
+      label: "Hourly Rate",
+    },
+  ];
+
   return (
     <div className="p-4">
-      <div className="overflow-x-auto rounded-lg border border-gray-200">
-        <table className="min-w-full divide-y divide-gray-200 text-sm">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="p-3">
-                <input
-                  type="checkbox"
-                  className="h-4 w-4"
-                  checked={isAllSelected}
-                  onChange={toggleSelectAll}
-                />
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Name
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Address
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Phone Number
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Contact
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Email
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Vendor Type
-              </th>
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Website
-              </th>
-
-
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                <div className="flex items-center gap-2">
-                  <span>Date Create</span>
-                  <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() => setSort("asc")}
-                      className={`p-1 rounded hover:bg-gray-100 transition
-                        ${sortOrder === "asc"
-                          ? "text-gray-900"
-                          : "text-gray-400"
-                        }`}
-                      aria-pressed={sortOrder === "asc"}
-                      title="Sort ascending"
-                    >
-                      <FaArrowUp />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSort("desc")}
-                      className={`p-1 rounded hover:bg-gray-100 transition
-                        ${sortOrder === "desc"
-                          ? "text-gray-900"
-                          : "text-gray-400"
-                        }`}
-                      aria-pressed={sortOrder === "desc"}
-                      title="Sort descending"
-                    >
-                      <FaArrowDown />
-                    </button>
-                  </div>
-                </div>
-              </th>
-
-              <th className="px-4 py-2 text-left font-medium text-gray-700">
-                Hourly Rate
-              </th>
-            </tr>
-          </thead>
-
-          <tbody className="divide-y divide-gray-200">
-            {sortedVendors.map((vendor) => {
-              const isSelected = selectedIds.includes(vendor.id);
-              return (
-                <tr
-                  key={vendor.id}
-                  className={`${isSelected ? "bg-blue-100" : "hover:bg-gray-50"
-                    } transition-colors`}
-                >
-                  <td className="p-3">
-                    <input
-                      type="checkbox"
-                      className="h-4 w-4"
-                      checked={isSelected}
-                      onChange={() => toggleRow(vendor.id)}
-                    />
-                  </td>
-                  <td className="px-4 py-2">{vendor.name}</td>
-                  <td className="px-4 py-2">{vendor.address}</td>
-                  <td className="px-4 py-2">{vendor.phone}</td>
-                  <td className="px-4 py-2">{vendor.contact}</td>
-                  <td className="px-4 py-2">{vendor.email}</td>
-                  <td className="px-4 py-2">{vendor.vendorType}</td>
-                  <td className="px-4 py-2 text-blue-500 underline">
-                    {vendor.website === "N/A" ? (
-                      "N/A"
-                    ) : (
-                      <a
-                        href={vendor.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {vendor.website}
-                      </a>
-                    )}
-                  </td>
-                  <td className="px-4 py-2">
-                    {new Date(vendor.dateCreate).toLocaleDateString("en-US")}
-                  </td>
-                  <td className="px-4 py-2">{vendor.hourlyRate}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      <DataTable
+        data={sortedVendors}
+        columns={columns}
+        selectable={true}
+        className="overflow-x-auto rounded-lg border border-gray-200"
+      />
     </div>
   );
 }
