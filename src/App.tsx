@@ -29,7 +29,8 @@ import Assets from "./pages/Assets";
 import AssetsTask1 from "./components/assets/AssetsTask1";
 import Requestss from "./pages/Requestss";
 import WareHouseInventoryDetails from "./components/warehouse/ui-inventory/WareHouseInventoryDetails";
-
+import WorkOrderClickTable from "./components/workorder/WorkOrderClickTable";
+import Location from "./pages/Location";
 
 export default function App() {
   return (
@@ -58,6 +59,8 @@ export default function App() {
             <Route path="/assets-task1" element={<AssetsTask1 />} />
             <Route path="/request" element={<Requestss />} />
             <Route path="/ware-house-inventory-details" element={<WareHouseInventoryDetails />} />
+            <Route path="/work-order-click-table" element={<WorkOrderClickTable />} />
+            <Route path="/location" element={<Location />} />
 
 
 

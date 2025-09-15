@@ -151,8 +151,8 @@ const RequestTable: React.FC = () => {
           {/* Table Body */}
           <div className="divide-y divide-gray-200">
             {requests.map((request) => (
-              <div 
-                key={request.id} 
+              <div
+                key={request.id}
                 className="px-3 sm:px-4 md:px-6 py-3 sm:py-4 hover:bg-gray-50 transition-colors cursor-pointer"
                 onClick={() => handleRowClick(request)}
               >
@@ -228,10 +228,10 @@ const RequestTable: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Modal Request Details */}
-      <ModalRequestDetails 
-        isOpen={isModalOpen} 
+      <ModalRequestDetails
+        isOpen={isModalOpen}
         onClose={handleCloseModal}
       />
     </div>

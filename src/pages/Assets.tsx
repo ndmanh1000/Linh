@@ -17,10 +17,10 @@ export default function Assets() {
       </div>
       <div className=" grid grid-cols-1 md:flex items-center md:gap-4 gap-4">
         <FilterButton />
-       
+
         <LocationButton />
-       
-        
+
+
         <p className="cursor-pointer font-medium text-[#007FE6]">Reset</p>
       </div>
       <div>

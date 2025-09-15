@@ -1,4 +1,4 @@
-import { PlusOutlinedIcon, MoreIcon, ScanIcon } from "../../icons";
+import { PlusOutlinedIcon, MoreIcon, ScanIcon, ColummIcon } from "../../icons";
 import { Modal } from "../ui/modal";
 
 import Label from "../form/Label";
@@ -11,6 +11,12 @@ import UpFile10 from "../upload/UpFile10";
 import { useModal } from "../../hooks/useModal";
 import ModalQr from "../modal/ModalQr";
 import Toggle from "../toggle-switch/Toggle";
+import ModalScanQr from "../modal/ModalScanQr";
+
+import { useState, useEffect, useRef } from "react";
+import { GoTable } from "react-icons/go";
+import { useNavigate } from "react-router";
+
 // import UploadFiles from "../upload/UploadFiles";
 
 const options = [
@@ -72,17 +78,94 @@ const handleSelectChange4 = (value: string) => {
 };
 
 export default function WorkOrderHeader() {
+  const navigate = useNavigate();
   const { isOpen, openModal, closeModal } = useModal();
   const {
     isOpen: isModalQrOpen,
-    openModal: openModalQr,
     closeModal: closeModalQr,
   } = useModal();
+  const {
+    isOpen: isModalScanQrOpen,
+    openModal: openModalScanQr,
+    closeModal: closeModalScanQr,
+  } = useModal();
+
+
+  // State cho layout dropdown
+  const [selectedLayout, setSelectedLayout] = useState("Table");
+  const [isLayoutDropdownOpen, setIsLayoutDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Đóng dropdown khi click bên ngoài
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsLayoutDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
 
   return (
     <div>
       <div className="w-full flex items-center justify-between">
-        <div>Work Orders</div>
+        <div className="flex items-center gap-2 md:gap-4">
+          <div>Work Orders</div>
+          <div className="w-px h-6 bg-gray-600"></div>
+          <div className="relative" ref={dropdownRef}>
+            {/* Layout Dropdown */}
+            <button
+              onClick={() => setIsLayoutDropdownOpen(!isLayoutDropdownOpen)}
+              className="flex items-center gap-2 px-3 py-2 "
+            >
+              <span className="text-sm font-medium">{selectedLayout}</span>
+              <svg
+                className={`w-4 h-4 transition-transform ${isLayoutDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Dropdown Menu */}
+            {isLayoutDropdownOpen && (
+              <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                <div className="py-1">
+                  <button
+                    onClick={() => {
+                      setSelectedLayout("Table");
+                      setIsLayoutDropdownOpen(false);
+                      navigate("/work-order-click-table");
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 ${selectedLayout === "Table" ? "bg-blue-50 text-blue-600" : "text-gray-700"
+                      }`}
+                  >
+                    <GoTable className={`w-4 h-4 ${selectedLayout === "Table" ? "text-blue-600" : "text-gray-400"}`} />
+                    Table
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSelectedLayout("Column");
+                      setIsLayoutDropdownOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 ${selectedLayout === "Column" ? "bg-blue-50 text-blue-600" : "text-gray-700"
+                      }`}
+                  >
+                    <ColummIcon className={`w-4 h-4 ${selectedLayout === "Column" ? "text-blue-600" : "text-gray-400"}`} />
+                    Column
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
         <div className="flex items-center md:gap-10 gap-5">
 
           <button
@@ -97,7 +180,7 @@ export default function WorkOrderHeader() {
             <MoreIcon />
           </div>
           <div className="cursor-pointer">
-            <ScanIcon className="w-5 h-5" onClick={openModalQr} />
+            <ScanIcon className="w-5 h-5" onClick={openModalScanQr} />
           </div>
         </div>
 
@@ -327,6 +410,15 @@ export default function WorkOrderHeader() {
         </Modal>
       </div>
       <ModalQr isOpen={isModalQrOpen} onClose={closeModalQr} />
+
+      <ModalScanQr
+        isOpen={isModalScanQrOpen}
+        onClose={closeModalScanQr}
+        onScanSuccess={(result) => {
+          console.log('QR Scan result:', result);
+          closeModalScanQr();
+        }}
+      />
     </div>
   );
 }

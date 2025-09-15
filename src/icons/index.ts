@@ -54,42 +54,60 @@ import { ReactComponent as ChatIcon } from "./chat.svg?react";
 import { ReactComponent as MoreDotIcon } from "./moredot.svg?react";
 import { ReactComponent as AlertHexaIcon } from "./alert-hexa.svg?react";
 import { ReactComponent as ErrorHexaIcon } from "./info-hexa.svg?react";
-import {ReactComponent as MachinehealthIcon} from "./machine-health.svg?react";
-import {ReactComponent as DocumentnormalIcon} from "./document-normal.svg?react";
-import {ReactComponent as PlusOutlinedIcon} from "./PlusOutlined.svg?react";
-import {ReactComponent as MoreIcon} from "./more.svg?react";
-import {ReactComponent as ScanIcon} from "./scan.svg?react";
-import {ReactComponent as GridColumnIcon} from "./gridcolumn.svg?react";
-import {ReactComponent as DiagramIcon} from "./diagram.svg?react";
-import {ReactComponent as LocationIcon} from "./location.svg?react";
-import {ReactComponent as Boc1Icon} from "./boc1.svg?react";
-import {ReactComponent as UserocIcon} from "./user-octagon.svg?react";
-import {ReactComponent as RecorIcon} from "./record-circle.svg?react";
-import {ReactComponent as ClockIcon} from "./clock.svg?react";
-import {ReactComponent as DolarIcon} from "./dollar-circle.svg?react";
-import {ReactComponent as BackwardIcon} from "./backward-item.svg?react";
-import {ReactComponent as EditIcon1} from "./edit-2.svg?react";
-import {ReactComponent as LinkIcon} from "./link.svg?react";
-import {ReactComponent as Time2Icon} from "./time2.svg?react";
-import {ReactComponent as DocumentIcon} from "./document-download.svg?react";
-import {ReactComponent as Note2Icon} from "./note-2.svg?react";
-import {ReactComponent as Copy1} from "./copy1.svg?react";
-import {ReactComponent as Track1Icon} from "./trash1.svg?react";
-import {ReactComponent as DolaIcon} from "./dola.svg?react";
-import {ReactComponent as BroomIcon} from "./broom.svg?react";
-import {ReactComponent as CalenderIcon1} from "./calendar1.svg?react";
-import {ReactComponent as TimerIcon2} from "./time2.svg?react";
-import {ReactComponent as SettingIcon2} from "./setting2.svg?react";
-import {ReactComponent as Edit3Icon} from "./edit-3.svg?react";
-import {ReactComponent as MinusIcon} from "./minus-cirlce.svg?react";
-import {ReactComponent as LayoutLineIcon} from "./layoutoutlined.svg?react";
-
-
-
-
+import { ReactComponent as MachinehealthIcon } from "./machine-health.svg?react";
+import { ReactComponent as DocumentnormalIcon } from "./document-normal.svg?react";
+import { ReactComponent as PlusOutlinedIcon } from "./PlusOutlined.svg?react";
+import { ReactComponent as MoreIcon } from "./more.svg?react";
+import { ReactComponent as ScanIcon } from "./scan.svg?react";
+import { ReactComponent as GridColumnIcon } from "./gridcolumn.svg?react";
+import { ReactComponent as DiagramIcon } from "./diagram.svg?react";
+import { ReactComponent as LocationIcon } from "./location.svg?react";
+import { ReactComponent as Boc1Icon } from "./boc1.svg?react";
+import { ReactComponent as UserocIcon } from "./user-octagon.svg?react";
+import { ReactComponent as RecorIcon } from "./record-circle.svg?react";
+import { ReactComponent as ClockIcon } from "./clock.svg?react";
+import { ReactComponent as DolarIcon } from "./dollar-circle.svg?react";
+import { ReactComponent as BackwardIcon } from "./backward-item.svg?react";
+import { ReactComponent as EditIcon1 } from "./edit-2.svg?react";
+import { ReactComponent as LinkIcon } from "./link.svg?react";
+import { ReactComponent as Time2Icon } from "./time2.svg?react";
+import { ReactComponent as DocumentIcon } from "./document-download.svg?react";
+import { ReactComponent as Note2Icon } from "./note-2.svg?react";
+import { ReactComponent as Copy1 } from "./copy1.svg?react";
+import { ReactComponent as Track1Icon } from "./trash1.svg?react";
+import { ReactComponent as DolaIcon } from "./dola.svg?react";
+import { ReactComponent as BroomIcon } from "./broom.svg?react";
+import { ReactComponent as CalenderIcon1 } from "./calendar1.svg?react";
+import { ReactComponent as TimerIcon2 } from "./time2.svg?react";
+import { ReactComponent as SettingIcon2 } from "./setting2.svg?react";
+import { ReactComponent as Edit3Icon } from "./edit-3.svg?react";
+import { ReactComponent as MinusIcon } from "./minus-cirlce.svg?react";
+import { ReactComponent as LayoutLineIcon } from "./layoutoutlined.svg?react";
+import { ReactComponent as WorkOderIcon } from "./icon-work-order.svg?react";
+import { ReactComponent as PreIcon } from "./pre-icon.svg?react";
+import { ReactComponent as AssetsIcon } from "./asess-icon.svg?react";
+import { ReactComponent as WarehouseIcon } from "./war-house-icon.svg?react";
+import { ReactComponent as RequestIcon } from "./request-icon.svg?react";
+import { ReactComponent as PeopleIcon } from "./people-icon.svg?react";
+import { ReactComponent as VerdorIcon } from "./ver-dor-icon.svg?react";
+import { ReactComponent as CheckListIcon } from "./checklist-icon.svg?react";
+import { ReactComponent as FilesIcon } from "./file-icon.svg?react";
+import { ReactComponent as ColummIcon } from "./columm.svg?react";
+import { ReactComponent as LocationIconss } from "./location-icon.svg?react";
 
 
 export {
+  LocationIconss,
+  ColummIcon,
+  CheckListIcon,
+  FilesIcon,
+  VerdorIcon,
+  PeopleIcon,
+  RequestIcon,
+  WarehouseIcon,
+  AssetsIcon,
+  PreIcon,
+  WorkOderIcon,
   LayoutLineIcon,
   MinusIcon,
   Edit3Icon,

@@ -8,6 +8,7 @@ import { GoPlus } from "react-icons/go";
 import PmTable from "../tables/PmTable";
 import ModalAddWorkOrderDetails from "../modal/ModalAddWorkOrderDetails";
 import ScheduleBox from "./ScheduleBox";
+import ModalScanQr from "../modal/ModalScanQr";
 
 
 
@@ -24,6 +25,11 @@ export default function PreventiveMaintHeader() {
     closeModal: closeModalAddWorkOrderDetails,
   } = useModal();
   const [showScheduleBox, setShowScheduleBox] = useState(false);
+  const {
+    isOpen: isModalScanQrOpen,
+    openModal: openModalScanQr,
+    closeModal: closeModalScanQr,
+  } = useModal();
 
   return (
     <div>
@@ -43,7 +49,7 @@ export default function PreventiveMaintHeader() {
             <MoreIcon />
           </div>
           <div className="cursor-pointer">
-            <ScanIcon className="w-5 h-5" onClick={openModalQr} />
+            <ScanIcon className="w-5 h-5" onClick={openModalScanQr} />
           </div>
         </div>
 
@@ -153,6 +159,14 @@ export default function PreventiveMaintHeader() {
       <ModalAddWorkOrderDetails
         isOpen={isModalAddWorkOrderDetailsOpen}
         onClose={closeModalAddWorkOrderDetails}
+      />
+      <ModalScanQr
+        isOpen={isModalScanQrOpen}
+        onClose={closeModalScanQr}
+        onScanSuccess={(result) => {
+          console.log('QR Scan result:', result);
+          closeModalScanQr();
+        }}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { FaCheck } from "react-icons/fa6";
 
@@ -6,9 +6,24 @@ export default function StatusButton() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("Status"); // lưu trạng thái được chọn
   const options = ["Status", "Active", "Inactive", "Pending"];
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" ref={dropdownRef}>
 
       <button
         onClick={() => setOpen(!open)}
@@ -23,7 +38,7 @@ export default function StatusButton() {
 
 
       {open && (
-        <div className="absolute mt-1 md:w-40 w-full rounded-lg bg-white shadow-lg border border-gray-200 z-10">
+        <div className="absolute mt-1 md:w-40 w-full rounded-lg bg-white shadow-lg border border-gray-200 z-50">
           {options.map((opt) => (
             <button
               key={opt}

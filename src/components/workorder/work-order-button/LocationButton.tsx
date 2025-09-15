@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { LocationIcon } from "../../../icons";
 
 export default function LocationButton() {
   const [selected, setSelected] = useState("Location");
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const options = ["Location", "Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Cần Thơ"];
 
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
 
       <button
         onClick={() => setOpen(!open)}
@@ -25,7 +40,7 @@ export default function LocationButton() {
 
 
       {open && (
-        <div className="absolute left-0 mt-2 md:w-40 w-full bg-white border rounded-lg shadow-lg z-10">
+        <div className="absolute left-0 mt-2 md:w-40 w-full bg-white border rounded-lg shadow-lg z-50">
           {options.map((option) => (
             <div
               key={option}

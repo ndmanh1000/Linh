@@ -2,7 +2,7 @@ import { MoreIcon } from "../icons";
 import { useState } from "react";
 import { useModal } from "../hooks/useModal";
 import WorkOrderTask from "../components/workorder/work-order-task/WorkOrderTask";
-
+import ModalScanQr from "../components/modal/ModalScanQr";
 import { ScanIcon } from "../icons";
 import ModalQr from "../components/modal/ModalQr";
 import PeopleTeamTable from "../components/people-teams/PeopleTeamTable";
@@ -38,7 +38,11 @@ export default function PeoPleTeam() {
     openModal: openModalAddTeam,
     closeModal: closeModalAddTeam,
   } = useModal();
-
+  const {
+    isOpen: isModalScanQrOpen,
+    openModal: openModalScanQr,
+    closeModal: closeModalScanQr,
+  } = useModal();
   const [includeDeactivated, setIncludeDeactivated] = useState(false);
 
   const [activeTab, setActiveTab] = useState("People");
@@ -134,7 +138,7 @@ export default function PeoPleTeam() {
             </div>
           )}
           <div className="cursor-pointer">
-            <ScanIcon className="w-5 h-5" onClick={openModalQr} />
+            <ScanIcon className="w-5 h-5" onClick={openModalScanQr} />
           </div>
         </div>
       </div>
@@ -198,6 +202,14 @@ export default function PeoPleTeam() {
       <ModalDeletePerson
         isOpen={isModalDeletePersonOpen}
         onClose={closeModalDeletePerson}
+      />
+      <ModalScanQr
+        isOpen={isModalScanQrOpen}
+        onClose={closeModalScanQr}
+        onScanSuccess={(result) => {
+          console.log('QR Scan result:', result);
+          closeModalScanQr();
+        }}
       />
     </div>
   );

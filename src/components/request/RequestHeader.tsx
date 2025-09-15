@@ -3,6 +3,7 @@ import { PlusOutlinedIcon, MoreIcon, ScanIcon } from "../../icons";
 import { useModal } from "../../hooks/useModal";
 import ModalQr from "../modal/ModalQr";
 import ModalCreateRequest from "../modal/ModalCreateRequest";
+import ModalScanQr from "../modal/ModalScanQr";
 
 
 export default function RequestHeader() {
@@ -16,6 +17,11 @@ export default function RequestHeader() {
     isOpen: isModalCreateRequestOpen,
     openModal: openModalCreateRequest,
     closeModal: closeModalCreateRequest,
+  } = useModal();
+  const {
+    isOpen: isModalScanQrOpen,
+    openModal: openModalScanQr,
+    closeModal: closeModalScanQr,
   } = useModal();
 
 
@@ -37,7 +43,7 @@ export default function RequestHeader() {
             <MoreIcon />
           </div>
           <div className="cursor-pointer">
-            <ScanIcon className="w-5 h-5" onClick={openModalQr} />
+            <ScanIcon className="w-5 h-5" onClick={openModalScanQr} />
           </div>
         </div>
 
@@ -48,6 +54,14 @@ export default function RequestHeader() {
       <ModalCreateRequest
         isOpen={isModalCreateRequestOpen}
         onClose={closeModalCreateRequest}
+      />
+      <ModalScanQr
+        isOpen={isModalScanQrOpen}
+        onClose={closeModalScanQr}
+        onScanSuccess={(result) => {
+          console.log('QR Scan result:', result);
+          closeModalScanQr();
+        }}
       />
     </div>
   );

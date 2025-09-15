@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { DiagramIcon } from "../../../icons";
 
 export default function PriorityButton() {
   const [selected, setSelected] = useState("Priority");
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const options = ["Priority", "High", "Medium", "Low"];
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" ref={dropdownRef}>
 
       <button
         onClick={() => setOpen(!open)}
@@ -22,7 +37,7 @@ export default function PriorityButton() {
 
 
       {open && (
-        <div className="absolute mt-2 md:w-40 w-full bg-white border rounded-md shadow-lg z-10">
+        <div className="absolute mt-2 md:w-40 w-full bg-white border rounded-md shadow-lg z-50">
           {options.map((option) => (
             <button
               key={option}

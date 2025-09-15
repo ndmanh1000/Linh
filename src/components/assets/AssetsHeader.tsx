@@ -4,6 +4,7 @@ import { useModal } from "../../hooks/useModal";
 import ModalQr from "../modal/ModalQr";
 
 import ModalCreateAssets from "../modal/ModalCreateAssets";
+import ModalScanQr from "../modal/ModalScanQr";
 
 
 export default function AssetsHeader() {
@@ -18,7 +19,11 @@ export default function AssetsHeader() {
     openModal: openModalCreateAssets,
     closeModal: closeModalCreateAssets,
   } = useModal();
-
+  const {
+    isOpen: isModalScanQrOpen,
+    openModal: openModalScanQr,
+    closeModal: closeModalScanQr,
+  } = useModal();
 
   return (
     <div>
@@ -38,7 +43,7 @@ export default function AssetsHeader() {
             <MoreIcon />
           </div>
           <div className="cursor-pointer">
-            <ScanIcon className="w-5 h-5" onClick={openModalQr} />
+            <ScanIcon className="w-5 h-5" onClick={openModalScanQr} />
           </div>
         </div>
 
@@ -49,6 +54,14 @@ export default function AssetsHeader() {
       <ModalCreateAssets
         isOpen={isModalCreateAssetsOpen}
         onClose={closeModalCreateAssets}
+      />
+      <ModalScanQr
+        isOpen={isModalScanQrOpen}
+        onClose={closeModalScanQr}
+        onScanSuccess={(result) => {
+          console.log('QR Scan result:', result);
+          closeModalScanQr();
+        }}
       />
     </div>
   );

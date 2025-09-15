@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Boc1Icon } from "../../../icons";
 import { FaAngleDown } from "react-icons/fa6";
 
 export default function AssetsButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("Assets");
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const options = ["Assets", "Liabilities", "Equity"];
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" ref={dropdownRef}>
 
       <button
         onClick={() => setIsOpen(!isOpen)}
